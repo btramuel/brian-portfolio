@@ -1,3 +1,21 @@
+
+// Hide loading screen on full page load
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        loadingScreen.classList.add('hidden');
+    }
+});
+
+// Fallback in case 'load' never fires
+setTimeout(() => {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (loadingScreen) {
+        loadingScreen.classList.add('hidden');
+    }
+}, 5000);
+
+// Original script below:
 /**
  * Modern Portfolio Website JavaScript
  * Author: Brian Tramuel
