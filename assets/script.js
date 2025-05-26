@@ -726,5 +726,5 @@ window.addEventListener('load', () => {
   }, 0);
 });
 
-// Export for potential module usage
-export { PortfolioApp, utils };
+window.portfolioApp = new PortfolioApp();
+
