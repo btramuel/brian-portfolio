@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Brian Tramuel - Computer Science Student specializing in IT, Cloud Architecture, DevOps, and Security Operations" name="description"/>
+  <meta content="Brian Tramuel, Computer Science, IT, Cloud Architecture, DevOps, Security Operations, Portfolio" name="keywords"/>
+  <meta content="Brian Tramuel" name="author"/>
+  <title>
+   Brian Tramuel - Portfolio
+  </title>
+  <!-- Preconnect to external domains for better performance -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link href="assets/style.css" rel="stylesheet"/>
+  <!-- Favicon -->
+  <link href="assets/icons.svg#favicon" rel="icon" type="image/svg+xml"/>
+ </head>
+ <body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loading-screen">
+   <div class="loading-spinner">
+    <div class="spinner">
+    </div>
+    <p>
+     Loading Portfolio...
+    </p>
+   </div>
+  </div>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+   <div class="container">
+    <a class="navbar-brand" href="#home">
+     <span class="brand-text">
+      Brian Tramuel
+     </span>
+    </a>
+    <!-- Theme Toggle -->
+    <button aria-label="Toggle theme" class="theme-toggle" id="theme-toggle">
+     <i class="fas fa-moon" id="theme-icon">
+     </i>
+    </button>
+    <!-- Mobile Menu Toggle -->
+    <button aria-label="Toggle navigation" class="navbar-toggler" id="mobile-menu-toggle" type="button">
+     <span class="hamburger">
+      <span>
+      </span>
+      <span>
+      </span>
+      <span>
+      </span>
+     </span>
+    </button>
+    <!-- Navigation Menu -->
+    <div class="navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+       <a class="nav-link" href="#home">
+        Home
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#about">
+        About
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#projects">
+        Projects
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#resume">
+        Resume
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#contact">
+        Contact
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+   <div class="hero-background">
+    <div class="hero-pattern">
+    </div>
+   </div>
+   <div class="container">
+    <div class="row align-items-center min-vh-100">
+     <div class="col-lg-8">
+      <div class="hero-content">
+       <div class="hero-badge">
+        <i class="fas fa-code">
+        </i>
+        <span>
+         Computer Science Student
+        </span>
+       </div>
+       <h1 class="hero-title">
+        Hi, I'm
+        <span class="gradient-text">
+         Brian Tramuel
+        </span>
+       </h1>
+       <p class="hero-subtitle">
+        Senior at UNC Charlotte pursuing Computer Science with a focus on
+        <strong>
+         IT
+        </strong>
+        ,
+        <strong>
+         Cloud Architecture
+        </strong>
+        ,
+        <strong>
+         DevOps
+        </strong>
+        , 
+                            and
+        <strong>
+         Security Operations
+        </strong>
+       </p>
+       <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="#projects">
+         <i class="fas fa-rocket">
+         </i>
+         View My Work
+        </a>
+        <a class="btn btn-outline-primary btn-lg" href="#contact">
+         <i class="fas fa-envelope">
+         </i>
+         Get In Touch
+        </a>
+       </div>
+       <div class="hero-social">
+        <a class="social-link" href="https://github.com/btramuel" rel="noopener" target="_blank">
+         <i class="fab fa-github">
+         </i>
+        </a>
+        <a class="social-link" href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" rel="noopener" target="_blank">
+         <i class="fab fa-linkedin">
+         </i>
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-4">
+      <div class="hero-visual">
+       <div class="profile-container">
+        <div class="profile-image">
+         <!-- SVG placeholder for profile image -->
+         <svg class="placeholder-avatar" viewbox="0 0 200 200">
+          <defs>
+           <lineargradient id="avatarGradient" x1="0%" x2="100%" y1="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1">
+            </stop>
+            <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1">
+            </stop>
+           </lineargradient>
+          </defs>
+          <circle cx="100" cy="100" fill="url(#avatarGradient)" r="100">
+          </circle>
+          <circle cx="100" cy="85" fill="white" opacity="0.8" r="30">
+          </circle>
+          <ellipse cx="100" cy="140" fill="white" opacity="0.8" rx="40" ry="25">
+          </ellipse>
+         </svg>
+        </div>
+        <div class="tech-icons">
+         <div class="tech-icon" style="--delay: 0s">
+          <i class="fab fa-java">
+          </i>
+         </div>
+         <div class="tech-icon" style="--delay: 0.2s">
+          <i class="fab fa-microsoft">
+          </i>
+         </div>
+         <div class="tech-icon" style="--delay: 0.4s">
+          <i class="fas fa-database">
+          </i>
+         </div>
+         <div class="tech-icon" style="--delay: 0.6s">
+          <i class="fab fa-linux">
+          </i>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="hero-scroll-indicator">
+    <div class="scroll-down">
+     <i class="fas fa-chevron-down">
+     </i>
+    </div>
+   </div>
+  </section>
+  <!-- About Section -->
+  <section class="section" id="about">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-12">
+      <div class="section-header text-center">
+       <h2 class="section-title">
+        About Me
+       </h2>
+       <p class="section-subtitle">
+        Get to know more about my background and expertise
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="row align-items-center">
+     <div class="col-lg-6">
+      <div class="about-content">
+       <p class="lead">
+        Hello, my name is Brian Tramuel. I am a Senior at the University of North Carolina at Charlotte, 
+                            pursuing a Bachelor of Arts in Computer Science with a concentration in Information Technology.
+       </p>
+       <p>
+        I'm passionate about technology and always looking for opportunities to grow. I'm especially 
+                            interested in IT, Cloud Architecture, DevOps, and Security Operations. I enjoy working on 
+                            real-world projects that help me build practical skills and contribute to innovative solutions.
+       </p>
+       <div class="skills-highlights">
+        <div class="skill-category">
+         <h5>
+          <i class="fas fa-code">
+          </i>
+          Programming
+         </h5>
+         <div class="skill-tags">
+          <span class="skill-tag">
+           Java
+          </span>
+          <span class="skill-tag">
+           VB.Net
+          </span>
+          <span class="skill-tag">
+           MIPS Assembly
+          </span>
+          <span class="skill-tag">
+           SQL
+          </span>
+          <span class="skill-tag">
+           HTML
+          </span>
+         </div>
+        </div>
+        <div class="skill-category">
+         <h5>
+          <i class="fas fa-tools">
+          </i>
+          Tools &amp; Platforms
+         </h5>
+         <div class="skill-tags">
+          <span class="skill-tag">
+           MS Office 365
+          </span>
+          <span class="skill-tag">
+           MS Access
+          </span>
+          <span class="skill-tag">
+           Linux
+          </span>
+          <span class="skill-tag">
+           SharePoint
+          </span>
+          <span class="skill-tag">
+           Visual Studios
+          </span>
+          <span class="skill-tag">
+           Adobe
+          </span>
+          <span class="skill-tag">
+           SAS
+          </span>
+          <span class="skill-tag">
+           VMware
+          </span>
+          <span class="skill-tag">
+           Azure
+          </span>
+          <span class="skill-tag">
+           Visual Basic
+          </span>
+          <span class="skill-tag">
+           VS Code
+          </span>
+          <span class="skill-tag">
+           GitHub
+          </span>
+          <span class="skill-tag">
+           MySQL
+          </span>
+          <span class="skill-tag">
+           Rubrik
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-6">
+      <div class="education-timeline">
+       <h4 class="mb-4">
+        Education
+       </h4>
+       <div class="timeline-item">
+        <div class="timeline-dot">
+        </div>
+        <div class="timeline-content">
+         <div class="timeline-header">
+          <div class="university-logo">
+           <!-- UNC Charlotte Logo SVG -->
+           <svg class="logo-svg" viewbox="0 0 40 40">
+            <rect fill="#00703C" height="40" rx="8" width="40">
+            </rect>
+            <text fill="white" font-size="12" font-weight="bold" text-anchor="middle" x="20" y="25">
+             UNC
+            </text>
+           </svg>
+          </div>
+          <div>
+           <h5>
+            University of North Carolina at Charlotte
+           </h5>
+           <p class="mb-1">
+            B.A. in Computer Science | IT Concentration | Statistics Minor
+           </p>
+           <small class="text-muted">
+            Aug 2024 – May 2026
+           </small>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="timeline-item">
+        <div class="timeline-dot">
+        </div>
+        <div class="timeline-content">
+         <div class="timeline-header">
+          <div class="university-logo">
+           <!-- WSSU Logo SVG -->
+           <svg class="logo-svg" viewbox="0 0 40 40">
+            <rect fill="#8B0000" height="40" rx="8" width="40">
+            </rect>
+            <text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="20" y="25">
+             WSSU
+            </text>
+           </svg>
+          </div>
+          <div>
+           <h5>
+            Winston Salem State University
+           </h5>
+           <p class="mb-1">
+            Information Technology Major | Business Minor
+           </p>
+           <small class="text-muted">
+            Aug 2022 – May 2024
+           </small>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Experience Section -->
+    <div class="row mt-5">
+     <div class="col-lg-12">
+      <h4 class="mb-4">
+       Experience
+      </h4>
+      <div class="experience-grid">
+       <div class="experience-card">
+        <div class="experience-header">
+         <div class="company-logo">
+          <svg class="logo-svg" viewbox="0 0 40 40">
+           <rect fill="#0066CC" height="40" rx="8" width="40">
+           </rect>
+           <text fill="white" font-size="8" font-weight="bold" text-anchor="middle" x="20" y="25">
+            MECK
+           </text>
+          </svg>
+         </div>
+         <div class="experience-info">
+          <h5>
+           IT Systems Engineer Intern
+          </h5>
+          <p class="company">
+           Mecklenburg County
+          </p>
+          <small class="duration">
+           Jun 2024 – Aug 2024
+          </small>
+         </div>
+        </div>
+        <p class="experience-description">
+         Created and managed virtual machines using Azure and VMware. Provided technical support 
+                                for server storage, backups, and print systems. Maintained and optimized cloud environments.
+        </p>
+       </div>
+       <div class="experience-card">
+        <div class="experience-header">
+         <div class="company-logo">
+          <svg class="logo-svg" viewbox="0 0 40 40">
+           <rect fill="#FF6B35" height="40" rx="8" width="40">
+           </rect>
+           <text fill="white" font-size="8" font-weight="bold" text-anchor="middle" x="20" y="25">
+            SHT
+           </text>
+          </svg>
+         </div>
+         <div class="experience-info">
+          <h5>
+           Technician
+          </h5>
+          <p class="company">
+           Select Home Tech
+          </p>
+          <small class="duration">
+           Jun 2022 – Present
+          </small>
+         </div>
+        </div>
+        <p class="experience-description">
+         Installed and maintained home and office networking systems. Diagnosed and resolved 
+                                technical issues on site. Performed system upgrades and preventative maintenance.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Projects Section -->
+  <section class="section bg-light" id="projects">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-12">
+      <div class="section-header text-center">
+       <h2 class="section-title">
+        My Projects
+       </h2>
+       <p class="section-subtitle">
+        A showcase of my technical work and achievements
+       </p>
+      </div>
+     </div>
+    </div>
+    <!-- Project Filters -->
+    <div class="row">
+     <div class="col-lg-12">
+      <div class="project-filters text-center mb-5">
+       <button class="filter-btn active" data-filter="all">
+        All Projects
+       </button>
+       <button class="filter-btn" data-filter="java">
+        Java
+       </button>
+       <button class="filter-btn" data-filter="cloud">
+        Cloud
+       </button>
+       <button class="filter-btn" data-filter="database">
+        Database
+       </button>
+       <button class="filter-btn" data-filter="web">
+        Web
+       </button>
+      </div>
+     </div>
+    </div>
+    <!-- Projects Grid -->
+    <div class="row project-grid" id="projects-grid">
+     <!-- File System Simulator -->
+     <div class="col-lg-4 col-md-6 project-item" data-category="java">
+      <div class="project-card">
+       <div class="project-image">
+        <!-- File System Icon SVG -->
+        <svg class="project-icon" viewbox="0 0 100 100">
+         <rect fill="#4f46e5" height="50" opacity="0.8" rx="5" width="60" x="20" y="25">
+         </rect>
+         <rect fill="white" height="8" rx="2" width="50" x="25" y="30">
+         </rect>
+         <rect fill="white" height="6" opacity="0.7" rx="1" width="35" x="25" y="42">
+         </rect>
+         <rect fill="white" height="6" opacity="0.7" rx="1" width="25" x="25" y="52">
+         </rect>
+         <circle cx="70" cy="45" fill="#10b981" r="3">
+         </circle>
+        </svg>
+       </div>
+       <div class="project-content">
+        <h5 class="project-title">
+         File System Simulator
+        </h5>
+        <p class="project-description">
+         Java CLI application that simulates file and folder management with a custom command line interface. 
+                                Users can create directories and files, navigate folders, and view the full tree structure.
+        </p>
+        <div class="project-tags">
+         <span class="project-tag">
+          Java
+         </span>
+         <span class="project-tag">
+          CLI
+         </span>
+         <span class="project-tag">
+          File System
+         </span>
+        </div>
+        <div class="project-links">
+         <a class="btn btn-outline-primary btn-sm" href="https://github.com/btramuel/File-System-" rel="noopener" target="_blank">
+          <i class="fab fa-github">
+          </i>
+          GitHub
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- Server Migration Project -->
+     <div class="col-lg-4 col-md-6 project-item" data-category="cloud">
+      <div class="project-card">
+       <div class="project-image">
+        <!-- Cloud Migration Icon SVG -->
+        <svg class="project-icon" viewbox="0 0 100 100">
+         <path d="M25 60c-8 0-15-7-15-15s7-15 15-15c1 0 3 0 4 1 3-8 11-14 20-14 12 0 22 10 22 22 0 2 0 4-1 6 6 2 10 8 10 15 0 9-7 16-16 16H25z" fill="#0ea5e9">
+         </path>
+         <rect fill="white" height="20" opacity="0.9" rx="3" width="30" x="35" y="45">
+         </rect>
+         <path d="M45 50l5 5 5-5" fill="none" stroke="#0ea5e9" stroke-width="2">
+         </path>
+        </svg>
+       </div>
+       <div class="project-content">
+        <h5 class="project-title">
+         Server Migration Project
+        </h5>
+        <p class="project-description">
+         Migrated physical servers to Azure cloud infrastructure, ensuring secure data transfer, 
+                                retiring legacy hardware, and documenting the complete infrastructure setup.
+        </p>
+        <div class="project-tags">
+         <span class="project-tag">
+          Azure
+         </span>
+         <span class="project-tag">
+          VMware
+         </span>
+         <span class="project-tag">
+          Cloud Migration
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- Student Stress Analysis -->
+     <div class="col-lg-4 col-md-6 project-item" data-category="database">
+      <div class="project-card">
+       <div class="project-image">
+        <!-- Analytics Icon SVG -->
+        <svg class="project-icon" viewbox="0 0 100 100">
+         <rect fill="#f59e0b" height="15" width="8" x="20" y="70">
+         </rect>
+         <rect fill="#ef4444" height="25" width="8" x="32" y="60">
+         </rect>
+         <rect fill="#10b981" height="40" width="8" x="44" y="45">
+         </rect>
+         <rect fill="#8b5cf6" height="30" width="8" x="56" y="55">
+         </rect>
+         <rect fill="#06b6d4" height="45" width="8" x="68" y="40">
+         </rect>
+         <circle cx="24" cy="35" fill="#f59e0b" r="3">
+         </circle>
+         <circle cx="36" cy="25" fill="#ef4444" r="3">
+         </circle>
+         <circle cx="48" cy="20" fill="#10b981" r="3">
+         </circle>
+         <circle cx="60" cy="30" fill="#8b5cf6" r="3">
+         </circle>
+         <circle cx="72" cy="15" fill="#06b6d4" r="3">
+         </circle>
+         <path d="M24 35L36 25L48 20L60 30L72 15" fill="none" stroke="#6b7280" stroke-width="2">
+         </path>
+        </svg>
+       </div>
+       <div class="project-content">
+        <h5 class="project-title">
+         Student Stress Analysis
+        </h5>
+        <p class="project-description">
+         Analyzed survey data using SAS and regression models to identify stress patterns among 
+                                STEM students. Used Google Forms for data collection and statistical analysis.
+        </p>
+        <div class="project-tags">
+         <span class="project-tag">
+          SAS
+         </span>
+         <span class="project-tag">
+          Data Analysis
+         </span>
+         <span class="project-tag">
+          Statistics
+         </span>
+        </div>
+        <div class="project-links">
+         <a class="btn btn-outline-primary btn-sm" href="#">
+          <i class="fas fa-file-pdf">
+          </i>
+          Report
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- Car Valet Management -->
+     <div class="col-lg-4 col-md-6 project-item" data-category="database">
+      <div class="project-card">
+       <div class="project-image">
+        <!-- Database Icon SVG -->
+        <svg class="project-icon" viewbox="0 0 100 100">
+         <ellipse cx="50" cy="25" fill="#059669" rx="25" ry="8">
+         </ellipse>
+         <rect fill="#10b981" height="20" width="50" x="25" y="25">
+         </rect>
+         <ellipse cx="50" cy="45" fill="#059669" rx="25" ry="8">
+         </ellipse>
+         <rect fill="#10b981" height="20" width="50" x="25" y="45">
+         </rect>
+         <ellipse cx="50" cy="65" fill="#059669" rx="25" ry="8">
+         </ellipse>
+         <!-- Car icon -->
+         <rect fill="white" height="10" opacity="0.8" rx="2" width="20" x="40" y="35">
+         </rect>
+         <circle cx="43" cy="47" fill="white" opacity="0.8" r="2">
+         </circle>
+         <circle cx="57" cy="47" fill="white" opacity="0.8" r="2">
+         </circle>
+        </svg>
+       </div>
+       <div class="project-content">
+        <h5 class="project-title">
+         Car Valet Management System
+        </h5>
+        <p class="project-description">
+         Created a comprehensive database system for managing valet staff, vehicles, and transactions. 
+                                Implemented SQL queries and stored procedures for tracking and real-time updates.
+        </p>
+        <div class="project-tags">
+         <span class="project-tag">
+          SQL
+         </span>
+         <span class="project-tag">
+          MySQL
+         </span>
+         <span class="project-tag">
+          Database Design
+         </span>
+        </div>
+        <div class="project-links">
+         <a class="btn btn-outline-primary btn-sm" href="#">
+          <i class="fas fa-file-pdf">
+          </i>
+          Documentation
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- Cloud Portfolio Website -->
+     <div class="col-lg-4 col-md-6 project-item" data-category="web cloud">
+      <div class="project-card">
+       <div class="project-image">
+        <!-- Website Icon SVG -->
+        <svg class="project-icon" viewbox="0 0 100 100">
+         <rect fill="#4f46e5" height="50" rx="5" width="70" x="15" y="25">
+         </rect>
+         <rect fill="white" height="35" rx="2" width="60" x="20" y="30">
+         </rect>
+         <circle cx="25" cy="35" fill="#ef4444" r="2">
+         </circle>
+         <circle cx="32" cy="35" fill="#f59e0b" r="2">
+         </circle>
+         <circle cx="39" cy="35" fill="#10b981" r="2">
+         </circle>
+         <rect fill="#6b7280" height="3" rx="1" width="30" x="25" y="45">
+         </rect>
+         <rect fill="#6b7280" height="3" rx="1" width="45" x="25" y="52">
+         </rect>
+         <rect fill="#6b7280" height="3" rx="1" width="20" x="25" y="59">
+         </rect>
+         <!-- Cloud -->
+         <path d="M60 45c-3 0-6-3-6-6s3-6 6-6c0 0 1 0 2 0 1-3 4-5 8-5 5 0 9 4 9 9 0 1 0 2 0 3 2 1 4 3 4 6 0 4-3 7-7 7H60z" fill="#0ea5e9" opacity="0.8">
+         </path>
+        </svg>
+       </div>
+       <div class="project-content">
+        <h5 class="project-title">
+         Cloud Portfolio Website
+        </h5>
+        <p class="project-description">
+         Built and deployed a personal portfolio website hosted on Azure Blob Storage with 
+                                static site hosting. Organized project assets and implemented modern web design.
+        </p>
+        <div class="project-tags">
+         <span class="project-tag">
+          HTML
+         </span>
+         <span class="project-tag">
+          CSS
+         </span>
+         <span class="project-tag">
+          Azure Blob
+         </span>
+        </div>
+        <div class="project-links">
+         <a class="btn btn-outline-primary btn-sm" href="https://github.com/btramuel/brian-portfolio" rel="noopener" target="_blank">
+          <i class="fab fa-github">
+          </i>
+          GitHub
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <!-- Library System -->
+     <div class="col-lg-4 col-md-6 project-item" data-category="java">
+      <div class="project-card">
+       <div class="project-image">
+        <!-- Library Icon SVG -->
+        <svg class="project-icon" viewbox="0 0 100 100">
+         <rect fill="#7c3aed" height="40" rx="3" width="50" x="25" y="30">
+         </rect>
+         <rect fill="white" height="30" rx="2" width="40" x="30" y="35">
+         </rect>
+         <rect fill="#7c3aed" height="3" rx="1" width="30" x="35" y="40">
+         </rect>
+         <rect fill="#7c3aed" height="3" rx="1" width="25" x="35" y="47">
+         </rect>
+         <rect fill="#7c3aed" height="3" rx="1" width="20" x="35" y="54">
+         </rect>
+         <rect fill="#7c3aed" height="10" width="3" x="40" y="25">
+         </rect>
+         <rect fill="#7c3aed" height="10" width="3" x="47" y="25">
+         </rect>
+         <rect fill="#7c3aed" height="10" width="3" x="54" y="25">
+         </rect>
+        </svg>
+       </div>
+       <div class="project-content">
+        <h5 class="project-title">
+         Library Management System
+        </h5>
+        <p class="project-description">
+         A simple yet effective book management program using Java ArrayLists to add, remove, 
+                                and search books with an intuitive user interface.
+        </p>
+        <div class="project-tags">
+         <span class="project-tag">
+          Java
+         </span>
+         <span class="project-tag">
+          ArrayList
+         </span>
+         <span class="project-tag">
+          Management System
+         </span>
+        </div>
+        <div class="project-links">
+         <a class="btn btn-outline-primary btn-sm" href="https://github.com/btramuel/Library-" rel="noopener" target="_blank">
+          <i class="fab fa-github">
+          </i>
+          GitHub
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Resume Section -->
+  <section class="section" id="resume">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-12">
+      <div class="section-header text-center">
+       <h2 class="section-title">
+        Resume
+       </h2>
+       <p class="section-subtitle">
+        Download my complete resume or view it online
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="row justify-content-center">
+     <div class="col-lg-8">
+      <div class="resume-container">
+       <div class="resume-preview">
+        <div class="resume-placeholder">
+         <i class="fas fa-file-pdf">
+         </i>
+         <h4>
+          Resume Preview
+         </h4>
+         <p>
+          Click the button below to download my complete resume
+         </p>
+        </div>
+       </div>
+       <div class="resume-actions text-center">
+        <a class="btn btn-primary btn-lg" download="" href="#">
+         <i class="fas fa-download">
+         </i>
+         Download Resume PDF
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="section bg-light" id="contact">
+   <div class="container">
+    <div class="row">
+     <div class="col-lg-12">
+      <div class="section-header text-center">
+       <h2 class="section-title">
+        Get In Touch
+       </h2>
+       <p class="section-subtitle">
+        Let's discuss opportunities and collaborations
+       </p>
+      </div>
+     </div>
+    </div>
+    <div class="row">
+     <div class="col-lg-8 mx-auto">
+      <!-- Contact Form -->
+      <div class="contact-form-container">
+       <form action="https://formsubmit.co/brian.dolphus@tramuel.com" class="contact-form" id="contact-form" method="POST">
+        <div class="row">
+         <div class="col-md-6">
+          <div class="form-group">
+           <label for="name">
+            Your Name *
+           </label>
+           <input class="form-control" id="name" name="name" required="" type="text"/>
+           <div class="form-feedback">
+           </div>
+          </div>
+         </div>
+         <div class="col-md-6">
+          <div class="form-group">
+           <label for="email">
+            Email Address *
+           </label>
+           <input class="form-control" id="email" name="email" required="" type="email"/>
+           <div class="form-feedback">
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="form-group">
+         <label for="subject">
+          Subject
+         </label>
+         <input class="form-control" id="subject" name="subject" type="text"/>
+        </div>
+        <div class="form-group">
+         <label for="message">
+          Message *
+         </label>
+         <textarea class="form-control" id="message" name="message" required="" rows="6"></textarea>
+         <div class="form-feedback">
+         </div>
+        </div>
+        <!-- Hidden FormSubmit fields -->
+        <input name="_captcha" type="hidden" value="false"/>
+        <input name="_template" type="hidden" value="box"/>
+        <input name="_next" type="hidden" value="https://brianportfolio.z13.web.core.windows.net/#contact"/>
+        <div class="form-group text-center">
+         <button class="btn btn-primary btn-lg" type="submit">
+          <span class="btn-text">
+           <i class="fas fa-paper-plane">
+           </i>
+           Send Message
+          </span>
+          <span class="btn-loading d-none">
+           <i class="fas fa-spinner fa-spin">
+           </i>
+           Sending...
+          </span>
+         </button>
+        </div>
+       </form>
+       <!-- Success Message -->
+       <div class="alert alert-success d-none" id="form-success">
+        <i class="fas fa-check-circle">
+        </i>
+        Thank you! Your message has been sent successfully.
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Contact Info -->
+    <div class="row mt-5">
+     <div class="col-lg-4">
+      <div class="contact-info-card">
+       <div class="contact-icon">
+        <i class="fas fa-envelope">
+        </i>
+       </div>
+       <h5>
+        Email
+       </h5>
+       <p>
+        <a href="mailto:brian.dolphus@tramuel.com">
+         brian.dolphus@tramuel.com
+        </a>
+       </p>
+      </div>
+     </div>
+     <div class="col-lg-4">
+      <div class="contact-info-card">
+       <div class="contact-icon">
+        <i class="fas fa-map-marker-alt">
+        </i>
+       </div>
+       <h5>
+        Location
+       </h5>
+       <p>
+        Charlotte, North Carolina
+       </p>
+      </div>
+     </div>
+     <div class="col-lg-4">
+      <div class="contact-info-card">
+       <div class="contact-icon">
+        <i class="fas fa-link">
+        </i>
+       </div>
+       <h5>
+        Connect
+       </h5>
+       <div class="social-links">
+        <a href="https://github.com/btramuel" rel="noopener" target="_blank">
+         <i class="fab fa-github">
+         </i>
+        </a>
+        <a href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" rel="noopener" target="_blank">
+         <i class="fab fa-linkedin">
+         </i>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+   <div class="container">
+    <div class="row align-items-center">
+     <div class="col-lg-6">
+      <p class="footer-text">
+       © 2025 Brian Tramuel. All rights reserved.
+      </p>
+     </div>
+     <div class="col-lg-6">
+      <div class="footer-social">
+       <a href="https://github.com/btramuel" rel="noopener" target="_blank">
+        <i class="fab fa-github">
+        </i>
+       </a>
+       <a href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" rel="noopener" target="_blank">
+        <i class="fab fa-linkedin">
+        </i>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <!-- Back to Top Button -->
+  <button aria-label="Back to top" class="back-to-top" id="back-to-top">
+   <i class="fas fa-chevron-up">
+   </i>
+  </button>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Custom JavaScript -->
+  <script src="assets/script.js">
+  </script>
+ </body>
+</html>
