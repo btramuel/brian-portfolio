@@ -26,25 +26,15 @@
   <style>
    .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: var(--spacing-2xl);
-}
-
-.project-card {
-  padding: var(--spacing-2xl);
-}
-  </style>
-  <style>
-   .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--spacing-lg);
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
   justify-content: center;
 }
 
 .project-card {
   max-width: 100%;
   margin: 0 auto;
+  padding: 1.5rem;
 }
   </style>
  </head>
@@ -102,7 +92,7 @@
        </a>
       </li>
       <li class="nav-item">
-       <a class="btn btn-outline-primary btn-sm" href="/assets/docs/resume.pdf" target="_blank">
+       <a class="btn btn-outline-primary btn-sm" download href="/assets/docs/resume.pdf" target="_blank">
         View Resume
        </a>
       </li>
@@ -851,7 +841,7 @@
         </div>
        </div>
        <div class="resume-actions text-center">
-        <a class="btn btn-primary btn-lg" download="" href="/assets/docs/resume.pdf" target="_blank">
+        <a class="btn btn-primary btn-lg" download href="/assets/docs/resume.pdf" target="_blank">
          <i class="fas fa-download">
          </i>
          Download Resume PDF
