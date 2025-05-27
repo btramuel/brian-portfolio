@@ -782,10 +782,11 @@ p {
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-lg); /* More balanced spacing */
+  justify-content: center;
 }
+
 
 .project-item {
   transition: all var(--transition-normal);
@@ -812,6 +813,10 @@ p {
 .project-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
+}
+.project-card {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .project-image {
