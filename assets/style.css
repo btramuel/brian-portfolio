@@ -781,12 +781,14 @@ p {
   background: hsla(var(--primary), 0.1);
 }
 
+
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
   justify-content: center;
 }
+
 
 
 
@@ -839,12 +841,13 @@ p {
   transform: scale(1.1);
 }
 
+
 .project-content {
-  padding: var(--spacing-xl);
-  flex-grow: 1;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
 }
+
 
 .project-title {
   font-size: 1.25rem;
@@ -1292,9 +1295,14 @@ p {
     text-align: center;
   }
 
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+  
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  justify-content: center;
+}
+
 
   .contact-form-container {
     padding: var(--spacing-lg);
