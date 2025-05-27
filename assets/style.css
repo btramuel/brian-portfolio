@@ -782,10 +782,12 @@ p {
 }
 
 .project-grid {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--spacing-lg); /* More balanced spacing */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
   justify-content: center;
 }
+
 
 
 .project-item {
@@ -799,16 +801,15 @@ p {
 }
 
 .project-card {
-  background: hsl(var(--surface));
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  border: 1px solid hsl(var(--border));
-  transition: all var(--transition-normal);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
+
 
 .project-card:hover {
   transform: translateY(-8px);
