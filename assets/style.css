@@ -167,7 +167,7 @@ p {
 /* Navigation */
 .navbar {
   background: hsla(var(--surface), 0.95);
-  backdrop-filter: blur(10px);
+
   border-bottom: 1px solid hsl(var(--border));
   padding: var(--spacing-md) 0;
   transition: all var(--transition-normal);
