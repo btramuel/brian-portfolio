@@ -591,7 +591,8 @@
                     <!-- Contact Form -->
                     <div class="contact-form-container">
                         
-<form id="contact-form" class="contact-form" action="https://formspree.io/f/xanjwdwj" method="POST" onsubmit="return true;">
+
+<form id="contact-form" class="contact-form" action="https://formspree.io/f/xanjwdwj" method="POST">
   <div class="row">
     <div class="col-md-6 form-group">
       <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
@@ -611,11 +612,13 @@
   </div>
 
   <input type="hidden" name="_next" value="https://brianportfolio.z13.web.core.windows.net/#contact">
+  <input type="hidden" name="_subject" value="New Contact Form Submission">
 
   <div class="text-center">
     <button type="submit" class="btn btn-primary">Send Message</button>
   </div>
 </form>
+
 
 <!-- Success Message -->
                         <div id="form-success" class="alert alert-success d-none">

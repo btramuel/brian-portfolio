@@ -324,9 +324,15 @@ class ContactForm {
   bindEvents() {
     // Form submission
     this.form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      this.handleSubmit();
-    });
+  
+  const formFeedback = document.getElementById('form-success');
+  if (formFeedback) {
+    formFeedback.classList.remove('d-none');
+    setTimeout(() => formFeedback.classList.add('d-none'), 4000);
+  }
+
+});
+
 
     // Real-time validation
     this.inputs.forEach(input => {
