@@ -3,328 +3,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Brian Tramuel - Computer Science Student at UNC Charlotte specializing in IT, Cloud Computing, and Security Operations.">
-    <title>Brian Tramuel - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Brian Tramuel — Computer Science Student at UNC Charlotte. IT, Cloud Computing, UX, Security Operations.">
+    <title>Brian Tramuel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="container">
-            <a href="#home" class="logo">Brian Tramuel</a>
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">BT<span class="logo-dot">.</span></a>
             <div class="nav-links" id="navLinks">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-                <a href="documents/resume.pdf" target="_blank" class="btn-resume">Resume</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#leadership" class="nav-link">Leadership</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="documents/resume.pdf" target="_blank" class="nav-resume">Resume <span>↗</span></a>
             </div>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <span class="sun">☀️</span>
-                <span class="moon">🌙</span>
-            </button>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <div class="nav-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
-        <div class="container hero-content">
+        <div class="hero-bg">
+            <div class="grid-lines"></div>
+        </div>
+        <div class="hero-inner">
             <div class="hero-text">
-                <span class="badge">🚀 Computer Science Student</span>
-                <h1>Hi, I'm <span class="gradient-text">Brian Tramuel</span></h1>
-                <p class="hero-subtitle">Senior at UNC Charlotte pursuing Computer Science with a focus on <strong>Information Technology</strong>, <strong>Minor in Statistics</strong></p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">🚀 View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">✉️ Get In Touch</a>
+                <div class="hero-label reveal-up">
+                    <span class="status-dot"></span>
+                    B.A. CS · Incoming M.S. IT · UNC Charlotte
                 </div>
-                <div class="social-links">
-                    <a href="https://github.com/btramuel" target="_blank" aria-label="GitHub">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <h1 class="hero-heading reveal-up delay-1">
+                    Brian<br><span class="outline-text">Tramuel</span>
+                </h1>
+                <p class="hero-tagline reveal-up delay-2">
+                    Building <em>cloud-native systems</em>, <em>secure APIs</em>,<br>and <em>IT infrastructure</em> that scales.
+                </p>
+                <div class="hero-actions reveal-up delay-3">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="#contact" class="btn-ghost">Say Hello →</a>
+                </div>
+                <div class="hero-socials reveal-up delay-4">
+                    <a href="https://github.com/btramuel" target="_blank" aria-label="GitHub" class="social-pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
                     </a>
-                    <a href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" target="_blank" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <a href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" target="_blank" aria-label="LinkedIn" class="social-pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn
                     </a>
-                    <a href="https://app.joinhandshake.com/profiles/btramuel" target="_blank" aria-label="Handshake">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.827 0 1.5-0.673 1.5-1.5v-6c0-0.827-0.673-1.5-1.5-1.5h-5c-0.652 0-1.208 0.418-1.414 1h-3.172c-0.206-0.582-0.762-1-1.414-1h-5c-0.827 0-1.5 0.673-1.5 1.5v6c0 0.827 0.673 1.5 1.5 1.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-1c-1.378 0-2.5-1.122-2.5-2.5v-6c0-1.378 1.122-2.5 2.5-2.5h5c0.765 0 1.45 0.346 1.908 0.889 0.056-0.017 0.116-0.028 0.178-0.028h1.828c0.062 0 0.122 0.011 0.178 0.028 0.458-0.543 1.143-0.889 1.908-0.889h5c1.378 0 2.5 1.122 2.5 2.5v6c0 1.378-1.122 2.5-2.5 2.5zM12 13.5c0 0.828-0.672 1.5-1.5 1.5h-6c-0.828 0-1.5-0.672-1.5-1.5v-1c0-0.828 0.672-1.5 1.5-1.5h6c0.828 0 1.5 0.672 1.5 1.5v1zM21 13.5c0 0.828-0.672 1.5-1.5 1.5h-6c-0.828 0-1.5-0.672-1.5-1.5v-1c0-0.828 0.672-1.5 1.5-1.5h6c0.828 0 1.5 0.672 1.5 1.5v1z"/></svg>
+                    <a href="https://app.joinhandshake.com/profiles/btramuel" target="_blank" aria-label="Handshake" class="social-pill">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 7h14a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm0 0V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v2"/></svg>
+                        Handshake
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="profile.jpg" alt="Brian Tramuel" class="profile-pic">
+            <div class="hero-photo reveal-right">
+                <div class="photo-frame">
+                    <img src="profile.jpg" alt="Brian Tramuel" class="profile-img">
+                    <div class="photo-accent"></div>
+                </div>
+                <div class="stat-badge stat-1">
+                    <span class="stat-num">3+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-badge stat-2">
+                    <span class="stat-num">11+</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
             </div>
+        </div>
+        <div class="scroll-hint">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="about">
         <div class="container">
-            <h2>About Me</h2>
-            <p class="section-subtitle">Get to know more about my background and expertise</p>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="lead">Hello, my name is Brian Tramuel. I am a Senior at the University of North Carolina at Charlotte, pursuing a Bachelor of Arts in Computer Science with a concentration in Information Technology.</p>
-                    <p>I'm passionate about technology and always looking for opportunities to grow. I'm especially interested in IT, Cloud Computing, UX Methods, and Security Operations. I enjoy working on real-world projects that help me build practical skills and contribute to innovative solutions.</p>
+            <div class="section-header">
+                <span class="section-label">001 — About</span>
+                <h2>Background &<br>Education</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-bio">
+                    <p class="bio-lead">Hello, I'm Brian. A Computer Science graduate at UNC Charlotte (B.A. '26) with a concentration in IT — and incoming M.S. student in Information Technology focusing on Software Systems Design and Engineering.</p>
+                    <p>I'm passionate about building practical, secure systems — from cloud-native REST APIs and identity management to enterprise IT infrastructure and backend development. I thrive where software engineering meets real-world operations.</p>
+                    <p>Currently a Teaching Assistant for Intro to Information Security & Privacy at UNCC, helping 80+ students navigate Security+ concepts while pursuing AWS certifications.</p>
+                    <div class="interests-row">
+                        <span class="interest-chip">☁️ Cloud Systems</span>
+                        <span class="interest-chip">🔐 Security & IAM</span>
+                        <span class="interest-chip">⚙️ Backend Dev</span>
+                        <span class="interest-chip">🧩 IT Infrastructure</span>
+                    </div>
                 </div>
-                
-                <div class="education">
-                    <h3>Education</h3>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <div class="edu-logo" style="background-color: #00703C;">UNC</div>
-                                <h4>University of North Carolina at Charlotte</h4>
-                                <p class="degree">B.A. in Computer Science | IT Concentration | Statistics Minor</p>
-                                <p class="period">Aug 2024 – May 2026</p>
+                <div class="about-edu">
+                    <h3 class="sub-heading">Education</h3>
+                    <div class="edu-timeline">
+                        <div class="edu-item">
+                            <div class="edu-marker">
+                                <div class="edu-icon" style="--edu-color:#00703C">UNCC</div>
+                            </div>
+                            <div class="edu-detail">
+                                <h4>UNC Charlotte</h4>
+                                <p>M.S. Information Technology · Software Systems Design & Engineering</p>
+                                <span class="edu-date">Aug 2026 — Upcoming</span>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <div class="edu-logo" style="background-color: #8B0000;">WSSU</div>
+                        <div class="edu-item">
+                            <div class="edu-marker">
+                                <div class="edu-icon" style="--edu-color:#00703C">UNCC</div>
+                            </div>
+                            <div class="edu-detail">
+                                <h4>UNC Charlotte</h4>
+                                <p>B.A. Computer Science · IT Concentration · Statistics Minor</p>
+                                <span class="edu-date">Aug 2024 – May 2026</span>
+                            </div>
+                        </div>
+                        <div class="edu-item">
+                            <div class="edu-marker">
+                                <div class="edu-icon" style="--edu-color:#8B0000">WSSU</div>
+                            </div>
+                            <div class="edu-detail">
                                 <h4>Winston Salem State University</h4>
-                                <p class="degree">Information Technology Major | Business Minor</p>
-                                <p class="period">Aug 2022 – May 2024</p>
+                                <p>Information Technology · Business Minor</p>
+                                <span class="edu-date">Aug 2022 – May 2024</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="coursework">
-                <h3>Relevant Coursework</h3>
-                <div class="course-grid">
-                    <div class="course-item">✓ Data Structures & Algorithms</div>
-                    <div class="course-item">✓ Database Design & Implementation</div>
-                    <div class="course-item">✓ UX Methods</div>
-                    <div class="course-item">✓ Intro to Visual Basic</div>
-                    <div class="course-item">✓ Front-End Web Applications</div>
-                    <div class="course-item">✓ Cloud Computing & Data Analysis</div>
-                    <div class="course-item">✓ Human Centered Computing</div>
-                    <div class="course-item">✓ Human-Centered Artificial Intelligence</div>
-                    <div class="course-item">✓ Usable Security and Privacy</div>
-                    <div class="course-item">✓ Systems Analysis & Design</div>
-                    <div class="course-item">✓ Software Systems & Identity Management</div>
+                    <h3 class="sub-heading" style="margin-top:2.5rem">Relevant Coursework</h3>
+                    <div class="course-cloud">
+                        <span>Data Structures & Algorithms</span>
+                        <span>Database Design & Implementation</span>
+                        <span>Front-End Web Apps</span>
+                        <span>Cloud Computing & Data Analysis</span>
+                        <span>Identity & Access Management</span>
+                        <span>Backend App Development</span>
+                        <span>Usable Security & Privacy</span>
+                        <span>Software Analysis & Testing</span>
+                        <span>Human-Centered AI</span>
+                        <span>UX Methods</span>
+                        <span>Systems Analysis & Design</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2>Experience</h2>
-            <p class="section-subtitle">My professional journey in technology and IT</p>
-            
-            <div class="experience-list">
-                <div class="experience-card">
-                    <div class="exp-logo" style="background-color: #2750F5;">APL</div>
-                    <div class="exp-content">
-                        <h3>Retail Specialist</h3>
-                        <p class="company">Apple</p>
-                        <p class="period">Jun 2025 – Present</p>
-                        <p class="description">Assisting 50+ customers with Apple products and services, providing setup, purchases, and product education. Provided technical support and training on Apple devices and services to new customers.</p>
+            <div class="section-header">
+                <span class="section-label">002 — Experience</span>
+                <h2>Professional<br>Journey</h2>
+            </div>
+            <div class="exp-list">
+                <div class="exp-item" data-index="01">
+                    <div class="exp-meta">
+                        <div class="exp-logo" style="--logo-bg:#00703C">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                        </div>
+                        <div>
+                            <span class="exp-company">UNC Charlotte</span>
+                            <span class="exp-date">Jan 2026 – Present</span>
+                        </div>
+                    </div>
+                    <div class="exp-body">
+                        <h3>Teaching Assistant — Intro to Information Security & Privacy</h3>
+                        <p>Grading virtual labs, simulations, and quizzes for a Security+ aligned information security course. Supporting 80+ students with network and endpoint security, threat mitigation, authentication & access control, and cloud security fundamentals through interactive labs.</p>
                     </div>
                 </div>
 
-                <div class="experience-card">
-                    <div class="exp-logo" style="background-color: #0066CC;">MECK</div>
-                    <div class="exp-content">
+                <div class="exp-item" data-index="02">
+                    <div class="exp-meta">
+                        <div class="exp-logo" style="--logo-bg:#0a4275">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M3 3h4v4H3V3zm0 7h4v4H3v-4zm0 7h4v4H3v-4zm7-14h4v4h-4V3zm0 7h4v4h-4v-4zm0 7h4v4h-4v-4zm7-14h4v4h-4V3zm0 7h4v4h-4v-4zm0 7h4v4h-4v-4z"/></svg>
+                        </div>
+                        <div>
+                            <span class="exp-company">Mecklenburg County</span>
+                            <span class="exp-date">Jun 2024 – Aug 2024</span>
+                        </div>
+                    </div>
+                    <div class="exp-body">
                         <h3>IT Systems Engineer Intern</h3>
-                        <p class="company">Mecklenburg County</p>
-                        <p class="period">Jun 2024 – Aug 2024</p>
-                        <p class="description">Built and managed 10+ virtual machines using Microsoft Azure and VMware, supporting county-wide IT operations. Maintained server storage, backup systems, and print services ensuring 99% uptime across services, reducing service ticket resolution time by 15% through system performance and optimization.</p>
+                        <p>Built and managed 10+ virtual machines using Microsoft Azure and VMware supporting county-wide IT operations. Maintained server storage, backup systems, and print services achieving 99% uptime. Reduced service ticket resolution time by 15% through system performance optimization.</p>
                     </div>
                 </div>
 
-                <div class="experience-card">
-                    <div class="exp-logo" style="background-color: #F2F527; color: #000;">SHT</div>
-                    <div class="exp-content">
+                <div class="exp-item" data-index="03">
+                    <div class="exp-meta">
+                        <div class="exp-logo" style="--logo-bg:#1a1a2e">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div>
+                            <span class="exp-company">Select Home Tech</span>
+                            <span class="exp-date">Jun 2022 – May 2025</span>
+                        </div>
+                    </div>
+                    <div class="exp-body">
                         <h3>Technician</h3>
-                        <p class="company">Select Home Tech</p>
-                        <p class="period">Jun 2022 – May 2025</p>
-                        <p class="description">Installed and configured 80+ home/office networks, resolved tech issues, and performed system upgrades. Improved overall client system performance and reliability through proactive maintenance.</p>
+                        <p>Installed and configured 80+ home and office networks, resolved technical issues, and performed system upgrades. Improved client system performance and reliability through proactive maintenance and detailed documentation.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2>My Projects</h2>
-            <p class="section-subtitle">A showcase of my technical work and achievements</p>
-            
+            <div class="section-header">
+                <span class="section-label">003 — Projects</span>
+                <h2>Selected<br>Work</h2>
+            </div>
             <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="java">Java</button>
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="java">Java / Backend</button>
                 <button class="filter-btn" data-filter="cloud">Cloud</button>
                 <button class="filter-btn" data-filter="database">Database</button>
                 <button class="filter-btn" data-filter="web">Web</button>
                 <button class="filter-btn" data-filter="ux">UX</button>
             </div>
-
-            <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be inserted by JavaScript -->
-            </div>
+            <div class="projects-grid" id="projectsGrid"></div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skills -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2>Skills</h2>
-            <p class="section-subtitle">Tools, languages, and strengths I bring to teams</p>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>🔧 Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SAS</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">GitHub</span>
-                        <span class="skill-tag">SharePoint</span>
-                        <span class="skill-tag">Office 365</span>
-                        <span class="skill-tag">Excel</span>
+            <div class="section-header">
+                <span class="section-label">004 — Skills</span>
+                <h2>Tools &<br>Expertise</h2>
+            </div>
+            <div class="skills-layout">
+                <div class="skill-col">
+                    <div class="skill-block">
+                        <h3>Languages</h3>
+                        <div class="skill-list">
+                            <div class="skill-item"><span>Java</span><div class="skill-bar" style="--pct:88%"></div></div>
+                            <div class="skill-item"><span>Python</span><div class="skill-bar" style="--pct:75%"></div></div>
+                            <div class="skill-item"><span>SQL</span><div class="skill-bar" style="--pct:82%"></div></div>
+                            <div class="skill-item"><span>JavaScript</span><div class="skill-bar" style="--pct:72%"></div></div>
+                            <div class="skill-item"><span>HTML/CSS</span><div class="skill-bar" style="--pct:80%"></div></div>
+                            <div class="skill-item"><span>Bash/Shell</span><div class="skill-bar" style="--pct:65%"></div></div>
+                            <div class="skill-item"><span>VB.Net</span><div class="skill-bar" style="--pct:55%"></div></div>
+                        </div>
+                    </div>
+                    <div class="skill-block">
+                        <h3>Backend & Frameworks</h3>
+                        <div class="tag-cloud">
+                            <span class="stag highlight">Spring Boot</span>
+                            <span class="stag highlight">Spring Security</span>
+                            <span class="stag highlight">Spring MVC</span>
+                            <span class="stag highlight">Spring Data JPA</span>
+                            <span class="stag">RESTful API Design</span>
+                            <span class="stag">Node.js</span>
+                            <span class="stag">JWT Auth</span>
+                            <span class="stag">Maven</span>
+                        </div>
+                    </div>
+                    <div class="skill-block">
+                        <h3>Cloud & Infrastructure</h3>
+                        <div class="tag-cloud">
+                            <span class="stag highlight">Microsoft Azure</span>
+                            <span class="stag highlight">AWS</span>
+                            <span class="stag">VMware</span>
+                            <span class="stag">Google Cloud</span>
+                            <span class="stag">Azure Blob Storage</span>
+                            <span class="stag">Windows Server</span>
+                            <span class="stag">Linux</span>
+                        </div>
                     </div>
                 </div>
-
-                <div class="skill-category">
-                    <h3>💻 Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">VB.Net</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">Bash/Shell</span>
+                <div class="skill-col">
+                    <div class="skill-block">
+                        <h3>Tools & Platforms</h3>
+                        <div class="tag-cloud">
+                            <span class="stag highlight">Docker</span>
+                            <span class="stag highlight">Postman</span>
+                            <span class="stag">GitHub</span>
+                            <span class="stag">MySQL</span>
+                            <span class="stag">PostgreSQL</span>
+                            <span class="stag">VS Code</span>
+                            <span class="stag">SAS</span>
+                            <span class="stag">MS Office 365</span>
+                            <span class="stag">VMware Workstation Pro</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>⚙️ Technical</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Data Analysis</span>
-                        <span class="skill-tag">Application Frameworks</span>
-                        <span class="skill-tag">Documentation</span>
-                        <span class="skill-tag">Computer Literacy</span>
-                        <span class="skill-tag">AI & ML Fundamentals</span>
-                        <span class="skill-tag">Troubleshooting</span>
-                        <span class="skill-tag">Networking Basics</span>
+                    <div class="skill-block">
+                        <h3>Security & IAM</h3>
+                        <div class="tag-cloud">
+                            <span class="stag highlight">Identity & Access Management</span>
+                            <span class="stag highlight">Role-Based Access Control</span>
+                            <span class="stag">Active Directory</span>
+                            <span class="stag">Authentication Policies</span>
+                            <span class="stag">Endpoint Security</span>
+                            <span class="stag">Threat Mitigation</span>
+                            <span class="stag">CompTIA Security+</span>
+                        </div>
                     </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>💾 Operating Systems</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">Windows Server</span>
-                        <span class="skill-tag">SQL Server</span>
-                        <span class="skill-tag">VMware Workspace</span>
-                        <span class="skill-tag">Microsoft Machine Learning</span>
-                        <span class="skill-tag">Google Cloud Platform</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>☁️ Cloud Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Microsoft Azure</span>
-                        <span class="skill-tag">AWS</span>
-                        <span class="skill-tag">VMware</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🎨 Product & UX Skills</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">User Research</span>
-                        <span class="skill-tag">Usability Testing</span>
-                        <span class="skill-tag">Prototyping</span>
-                        <span class="skill-tag">UX Design</span>
-                        <span class="skill-tag">Journey Mapping</span>
-                        <span class="skill-tag">Heuristic Evaluation</span>
-                        <span class="skill-tag">Cognitive Walkthrough</span>
-                        <span class="skill-tag">SEQ/SUS Evaluation</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🏆 Certifications</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS Cloud Practitioner (In Progress)</span>
-                        <span class="skill-tag">AWS Data Engineer (In Progress)</span>
-                        <span class="skill-tag">Google Cloud Digital Leader (Planned)</span>
-                        <span class="skill-tag">Microsoft AZ-900 (Planned)</span>
+                    <div class="skill-block">
+                        <h3>Certifications</h3>
+                        <div class="cert-list">
+                            <div class="cert-item in-progress">
+                                <span class="cert-status">In Progress</span>
+                                <span>AWS Cloud Practitioner</span>
+                            </div>
+                            <div class="cert-item in-progress">
+                                <span class="cert-status">In Progress</span>
+                                <span>AWS Data Engineer</span>
+                            </div>
+                            <div class="cert-item planned">
+                                <span class="cert-status">Planned</span>
+                                <span>Google Cloud Digital Leader</span>
+                            </div>
+                            <div class="cert-item planned">
+                                <span class="cert-status">Planned</span>
+                                <span>Microsoft AZ-900</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="section-subtitle">Have a question or want to work together? I'd love to hear from you!</p>
-            
-            <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="section-header">
+                <span class="section-label">007 — Contact</span>
+                <h2>Let's<br>Connect</h2>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <p class="contact-intro">Whether you have an opportunity, a question, or just want to chat tech — my inbox is open.</p>
+                    <div class="contact-links">
+                        <a href="mailto:brian.dolphus@tramuel.com" class="contact-link">
+                            <span class="cl-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </span>
+                            <div>
+                                <span class="cl-label">Email</span>
+                                <span class="cl-value">brian.dolphus@tramuel.com</span>
+                            </div>
+                        </a>
+                        <a href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" target="_blank" class="contact-link">
+                            <span class="cl-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </span>
+                            <div>
+                                <span class="cl-label">LinkedIn</span>
+                                <span class="cl-value">Brian Tramuel</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/btramuel" target="_blank" class="contact-link">
+                            <span class="cl-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </span>
+                            <div>
+                                <span class="cl-label">GitHub</span>
+                                <span class="cl-value">btramuel</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary form-submit">Send Message →</button>
+                    <div id="formMessage" class="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section id="leadership" class="leadership">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">006 — Involvement</span>
+                <h2>Leadership &<br>Community</h2>
+            </div>
+            <div class="leadership-grid">
+                <div class="lead-card">
+                    <div class="lead-icon">⌨️</div>
+                    <div class="lead-body">
+                        <h3>Association of Computing Machinery</h3>
+                        <span class="lead-date">Aug 2022 – Present</span>
+                        <p>Participated in 5+ hackathons and multiple software development workshops. Collaborated on coding challenges and shared ideas at club meetings.</p>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
+                <div class="lead-card">
+                    <div class="lead-icon">🖤</div>
+                    <div class="lead-body">
+                        <h3>Blacks in Technology (BIT Club)</h3>
+                        <span class="lead-date">Sept 2024 – Present</span>
+                        <p>Engaged in events supporting Black tech students through career prep, networking sessions, and collaboration with students and professionals in tech.</p>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
+                <div class="lead-card">
+                    <div class="lead-icon">🎓</div>
+                    <div class="lead-body">
+                        <h3>Computing Leaders</h3>
+                        <span class="lead-date">Aug 2025 – Dec 2025</span>
+                        <p>Delivered 5+ K–12 computing lessons, developed teacher lesson plans, and led STEAM Expo booth activities — helping younger students learn basic coding concepts.</p>
+                    </div>
                 </div>
-                
-                <button type="submit" class="btn btn-primary">✉️ Send Message</button>
-            </form>
-            
-            <div id="formMessage" class="form-message"></div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container footer-content">
-            <div class="social-links">
-                <a href="https://github.com/btramuel" target="_blank" aria-label="GitHub">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" target="_blank" aria-label="LinkedIn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-                <a href="https://app.joinhandshake.com/profiles/btramuel" target="_blank" aria-label="Handshake">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 14h-1c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h1c0.827 0 1.5-0.673 1.5-1.5v-6c0-0.827-0.673-1.5-1.5-1.5h-5c-0.652 0-1.208 0.418-1.414 1h-3.172c-0.206-0.582-0.762-1-1.414-1h-5c-0.827 0-1.5 0.673-1.5 1.5v6c0 0.827 0.673 1.5 1.5 1.5h1c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5h-1c-1.378 0-2.5-1.122-2.5-2.5v-6c0-1.378 1.122-2.5 2.5-2.5h5c0.765 0 1.45 0.346 1.908 0.889 0.056-0.017 0.116-0.028 0.178-0.028h1.828c0.062 0 0.122 0.011 0.178 0.028 0.458-0.543 1.143-0.889 1.908-0.889h5c1.378 0 2.5 1.122 2.5 2.5v6c0 1.378-1.122 2.5-2.5 2.5zM12 13.5c0 0.828-0.672 1.5-1.5 1.5h-6c-0.828 0-1.5-0.672-1.5-1.5v-1c0-0.828 0.672-1.5 1.5-1.5h6c0.828 0 1.5 0.672 1.5 1.5v1zM21 13.5c0 0.828-0.672 1.5-1.5 1.5h-6c-0.828 0-1.5-0.672-1.5-1.5v-1c0-0.828 0.672-1.5 1.5-1.5h6c0.828 0 1.5 0.672 1.5 1.5v1z"/></svg>
-                </a>
-                <a href="mailto:contact@briantramuel.com" aria-label="Email">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
-                </a>
+        <div class="container footer-inner">
+            <span class="footer-name">Brian Tramuel</span>
+            <span class="footer-copy">© 2025 · Built with HTML, CSS & JS</span>
+            <div class="footer-links">
+                <a href="https://github.com/btramuel" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" target="_blank">LinkedIn</a>
+                <a href="documents/resume.pdf" target="_blank">Resume</a>
             </div>
-            <p>&copy; 2025 Brian Tramuel. All rights reserved.</p>
-            <p class="footer-tech">Built with HTML, CSS, and JavaScript</p>
         </div>
     </footer>
 
