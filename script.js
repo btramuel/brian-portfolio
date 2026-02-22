@@ -10,7 +10,7 @@ const PROJECTS = [
     color: '#5b7fff',
     label: 'Backend · Cloud',
     date:  'Dec 2025',
-    links: []
+    links: [{ text: 'GitHub →', url: 'https://github.com/btramuel/cloud-file-storage' }]
   },
   {
     title: 'Identity & Access Management System',
@@ -20,7 +20,7 @@ const PROJECTS = [
     color: '#a855f7',
     label: 'Security · Backend',
     date:  'Oct 2025',
-    links: []
+    links: [{ text: 'GitHub →', url: 'https://github.com/btramuel/identity-access-service' }]
   },
   {
     title: 'Active Directory Domain Lab',
