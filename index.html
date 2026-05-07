@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Brian Tramuel — CS grad & incoming M.S. IT student at UNC Charlotte. Cloud-native APIs, identity systems, and full-stack engineering.">
+    <title>Brian Tramuel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MOBILE TOP BAR -->
+    <div class="mobile-bar">
+        <a href="#top" class="mobile-logo">
+            <span class="logo-mark">bt</span>
+            <span class="logo-slash">/</span>
+            <span class="logo-name">brian tramuel</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+            <a href="#top" class="brand">
+                <div class="brand-mark">
+                    <span class="brand-bracket">[</span>bt<span class="brand-bracket">]</span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Brian Tramuel</span>
+                    <span class="brand-role">cs · cloud · backend</span>
+                </div>
+            </a>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                <span class="status-text">Available for SWE roles</span>
+            </div>
+
+            <nav class="side-nav">
+                <span class="nav-group">Overview</span>
+                <a href="#top" class="nav-link"><span class="nav-num">01</span>Introduction</a>
+                <a href="#about" class="nav-link"><span class="nav-num">02</span>About</a>
+                <a href="#experience" class="nav-link"><span class="nav-num">03</span>Experience</a>
+
+                <span class="nav-group">Work</span>
+                <a href="#projects" class="nav-link"><span class="nav-num">04</span>Projects</a>
+                <a href="#skills" class="nav-link"><span class="nav-num">05</span>Stack</a>
+                <a href="#certifications" class="nav-link"><span class="nav-num">06</span>Certifications</a>
+
+                <span class="nav-group">More</span>
+                <a href="#leadership" class="nav-link"><span class="nav-num">07</span>Leadership</a>
+                <a href="#contact" class="nav-link"><span class="nav-num">08</span>Contact</a>
+            </nav>
+
+            <div class="side-foot">
+                <a href="documents/resume.pdf" target="_blank" class="resume-link">
+                    <span>Résumé</span>
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
+                </a>
+                <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
+                    <svg class="i-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                    <svg class="i-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HERO -->
+        <section id="top" class="hero">
+            <div class="hero-meta">
+                <span class="meta-tag">v1.0 · last updated <span id="lastUpdated">May 2026</span></span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="hero-line">Hey, I&rsquo;m <span class="accent">Brian</span>.</span>
+                <span class="hero-line muted">I build software systems<br>that run in production.</span>
+            </h1>
+
+            <p class="hero-sub">
+                Computer Science graduate at UNC Charlotte, incoming M.S. student in Information Technology. Currently teaching information security &amp; pursuing AWS certifications.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary">
+                    <span>View projects</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+                <a href="#contact" class="btn-secondary">Get in touch</a>
+            </div>
+
+            <!-- info cards -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <span class="info-label"><span class="info-dot"></span> location</span>
+                    <span class="info-value">Charlotte, NC</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label"><span class="info-dot"></span> education</span>
+                    <span class="info-value">UNC Charlotte &middot; B.A. CS</span>
+                    <span class="info-sub">M.S. IT &middot; Aug 2026</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label"><span class="info-dot"></span> focus</span>
+                    <span class="info-value">Backend &middot; Cloud &middot; IAM</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label"><span class="info-dot"></span> stack</span>
+                    <span class="info-value">Node · Spring · PostgreSQL · Azure</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section">
+            <div class="section-head">
+                <span class="anchor">#02</span>
+                <h2>About</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-photo">
+                    <div class="photo-frame">
+                        <img src="profile.jpg" alt="Brian Tramuel">
+                    </div>
+                </div>
+                <div class="about-prose">
+                    <p>I'm a Computer Science graduate at UNC Charlotte with an Information Technology focus and a Statistics minor, and an incoming M.S. student in Software Systems Design &amp; Engineering. I write code for systems that have to actually run in production &mdash; not just demo well.</p>
+                    <p>My work sits at the intersection of software engineering and operations: REST APIs that authenticate properly, cloud infrastructure that doesn't fall over, identity systems that respect the principle of least privilege. Lately I've been deep in Node.js, Express, and Prisma &mdash; building out a book-club API with role-based access control and JWT auth.</p>
+                    <p>I'm a Teaching Assistant for Intro to Information Security &amp; Privacy at UNCC, supporting 80+ students through Security+&ndash;aligned labs while pursuing AWS certifications.</p>
+
+                    <div class="education-list">
+                        <span class="edu-label">Education</span>
+                        <div class="edu-item">
+                            <div class="edu-main">
+                                <span class="edu-school">UNC Charlotte</span>
+                                <span class="edu-deg">M.S. Information Technology &middot; Software Systems Design &amp; Engineering</span>
+                            </div>
+                            <span class="edu-date">Aug 2026 &mdash; Upcoming</span>
+                        </div>
+                        <div class="edu-item">
+                            <div class="edu-main">
+                                <span class="edu-school">UNC Charlotte</span>
+                                <span class="edu-deg">B.A. Computer Science &middot; IT Concentration &middot; Stats Minor</span>
+                            </div>
+                            <span class="edu-date">Aug 2024 &mdash; May 2026</span>
+                        </div>
+                        <div class="edu-item">
+                            <div class="edu-main">
+                                <span class="edu-school">Winston-Salem State</span>
+                                <span class="edu-deg">Information Technology &middot; Business Minor</span>
+                            </div>
+                            <span class="edu-date">Aug 2022 &mdash; May 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="section">
+            <div class="section-head">
+                <span class="anchor">#03</span>
+                <h2>Experience</h2>
+            </div>
+
+            <div class="exp-list">
+
+                <article class="exp-item">
+                    <div class="exp-bullet"><span></span></div>
+                    <div class="exp-content">
+                        <div class="exp-top">
+                            <h3>Teaching Assistant <span class="exp-pill">Now</span></h3>
+                            <span class="exp-date">Jan 2026 &mdash; May 2026</span>
+                        </div>
+                        <span class="exp-company">UNC Charlotte &middot; Intro to Information Security &amp; Privacy</span>
+                        <p>Graded virtual labs, simulations, and quizzes for a Security+&ndash;aligned course. Supported 80+ students through network &amp; endpoint security, threat mitigation, authentication, access control, and cloud security fundamentals while maintaining academic integrity.</p>
+                    </div>
+                </article>
+
+                <article class="exp-item">
+                    <div class="exp-bullet"><span></span></div>
+                    <div class="exp-content">
+                        <div class="exp-top">
+                            <h3>IT Systems Engineer Intern</h3>
+                            <span class="exp-date">Jun 2024 &mdash; Aug 2024</span>
+                        </div>
+                        <span class="exp-company">Mecklenburg County &middot; Charlotte, NC</span>
+                        <p>Built and managed 10+ virtual machines on Microsoft Azure and VMware supporting county-wide IT operations. Maintained server storage, backup systems, and print services with 99% uptime &mdash; cut service ticket resolution time by 15% through performance tuning.</p>
+                    </div>
+                </article>
+
+                <article class="exp-item">
+                    <div class="exp-bullet"><span></span></div>
+                    <div class="exp-content">
+                        <div class="exp-top">
+                            <h3>Technician</h3>
+                            <span class="exp-date">Jun 2022 &mdash; May 2025</span>
+                        </div>
+                        <span class="exp-company">Select Home Tech &middot; Charlotte, NC</span>
+                        <p>Installed and configured 80+ home and office networks. Resolved hardware and connectivity issues, performed system upgrades, and produced detailed maintenance documentation that improved client system reliability.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="section">
+            <div class="section-head">
+                <span class="anchor">#04</span>
+                <h2>Projects</h2>
+            </div>
+            <p class="section-lede">Fourteen projects across backend services, cloud infrastructure, databases, frontend, and UX research.</p>
+
+            <div class="filter-row">
+                <button class="f-btn active" data-filter="all">All <span class="f-count">14</span></button>
+                <button class="f-btn" data-filter="backend">Backend</button>
+                <button class="f-btn" data-filter="cloud">Cloud</button>
+                <button class="f-btn" data-filter="database">Data</button>
+                <button class="f-btn" data-filter="web">Web</button>
+                <button class="f-btn" data-filter="ux">UX</button>
+            </div>
+
+            <div class="projects-list" id="projectsGrid"></div>
+        </section>
+
+        <!-- SKILLS / STACK -->
+        <section id="skills" class="section">
+            <div class="section-head">
+                <span class="anchor">#05</span>
+                <h2>Stack</h2>
+            </div>
+
+            <div class="stack-grid">
+                <div class="stack-block">
+                    <span class="stack-label">Languages</span>
+                    <div class="stack-items">
+                        <span class="stack-item">Java</span>
+                        <span class="stack-item">JavaScript</span>
+                        <span class="stack-item">SQL</span>
+                        <span class="stack-item">Python</span>
+                        <span class="stack-item">HTML / CSS</span>
+                        <span class="stack-item">Bash</span>
+                        <span class="stack-item subtle">VB.Net</span>
+                    </div>
+                </div>
+
+                <div class="stack-block">
+                    <span class="stack-label">Backend</span>
+                    <div class="stack-items">
+                        <span class="stack-item">Node.js</span>
+                        <span class="stack-item">Express</span>
+                        <span class="stack-item">Prisma</span>
+                        <span class="stack-item">Spring Boot</span>
+                        <span class="stack-item">Spring Security</span>
+                        <span class="stack-item">JWT</span>
+                        <span class="stack-item">bcrypt</span>
+                        <span class="stack-item">Zod</span>
+                        <span class="stack-item">REST APIs</span>
+                        <span class="stack-item">Swagger</span>
+                    </div>
+                </div>
+
+                <div class="stack-block">
+                    <span class="stack-label">Cloud &amp; Infra</span>
+                    <div class="stack-items">
+                        <span class="stack-item">Azure</span>
+                        <span class="stack-item">AWS</span>
+                        <span class="stack-item">Azure Blob</span>
+                        <span class="stack-item">Render</span>
+                        <span class="stack-item">VMware</span>
+                        <span class="stack-item">Windows Server</span>
+                        <span class="stack-item">Linux</span>
+                        <span class="stack-item">Docker</span>
+                    </div>
+                </div>
+
+                <div class="stack-block">
+                    <span class="stack-label">Data</span>
+                    <div class="stack-items">
+                        <span class="stack-item">PostgreSQL</span>
+                        <span class="stack-item">MySQL</span>
+                        <span class="stack-item">SAS</span>
+                    </div>
+                </div>
+
+                <div class="stack-block">
+                    <span class="stack-label">Security &amp; IAM</span>
+                    <div class="stack-items">
+                        <span class="stack-item">RBAC</span>
+                        <span class="stack-item">OAuth</span>
+                        <span class="stack-item">Active Directory</span>
+                        <span class="stack-item">Endpoint Security</span>
+                        <span class="stack-item">Threat Mitigation</span>
+                    </div>
+                </div>
+
+                <div class="stack-block">
+                    <span class="stack-label">Tools</span>
+                    <div class="stack-items">
+                        <span class="stack-item">Git</span>
+                        <span class="stack-item">VS Code</span>
+                        <span class="stack-item">Postman</span>
+                        <span class="stack-item">Maven</span>
+                        <span class="stack-item">MS 365</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CERTIFICATIONS -->
+        <section id="certifications" class="section">
+            <div class="section-head">
+                <span class="anchor">#06</span>
+                <h2>Certifications</h2>
+            </div>
+
+            <div class="cert-table">
+                <div class="cert-row cert-head">
+                    <span>Certification</span>
+                    <span>Provider</span>
+                    <span>Status</span>
+                </div>
+                <div class="cert-row">
+                    <span class="cert-name">AWS Cloud Practitioner</span>
+                    <span class="cert-prov">Amazon Web Services</span>
+                    <span class="cert-status status-progress">In Progress</span>
+                </div>
+                <div class="cert-row">
+                    <span class="cert-name">AWS Data Engineer</span>
+                    <span class="cert-prov">Amazon Web Services</span>
+                    <span class="cert-status status-progress">In Progress</span>
+                </div>
+                <div class="cert-row">
+                    <span class="cert-name">Microsoft AZ-104</span>
+                    <span class="cert-prov">Microsoft Azure</span>
+                    <span class="cert-status status-planned">Planned</span>
+                </div>
+                <div class="cert-row">
+                    <span class="cert-name">Google Cloud Digital Leader</span>
+                    <span class="cert-prov">Google Cloud</span>
+                    <span class="cert-status status-planned">Planned</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- LEADERSHIP -->
+        <section id="leadership" class="section">
+            <div class="section-head">
+                <span class="anchor">#07</span>
+                <h2>Leadership</h2>
+            </div>
+
+            <div class="lead-grid">
+                <article class="lead-item">
+                    <h3>Association of Computing Machinery</h3>
+                    <span class="lead-date">Aug 2022 &mdash; May 2026</span>
+                    <p>Participated in 5+ hackathons and software development workshops. Collaborated on coding challenges and contributed at club meetings.</p>
+                </article>
+                <article class="lead-item">
+                    <h3>Blacks in Technology (BIT Club)</h3>
+                    <span class="lead-date">Sept 2024 &mdash; May 2026</span>
+                    <p>Engaged in events supporting Black tech students through career prep, networking sessions, and collaboration with industry professionals.</p>
+                </article>
+                <article class="lead-item">
+                    <h3>Computing Leaders</h3>
+                    <span class="lead-date">Aug 2025 &mdash; Dec 2025</span>
+                    <p>Delivered 5+ K&ndash;12 computing lessons, developed teacher lesson plans, and led STEAM Expo booth activities.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section section-contact">
+            <div class="section-head">
+                <span class="anchor">#08</span>
+                <h2>Contact</h2>
+            </div>
+
+            <div class="contact-block">
+                <h3 class="contact-title">Let's build something.</h3>
+                <p class="contact-sub">Open to SWE, backend, and cloud roles. Also happy to chat about anything technical &mdash; or anything else.</p>
+
+                <div class="contact-list">
+                    <a href="mailto:btramue1@charlotte.edu" class="contact-row">
+                        <span class="contact-key">email</span>
+                        <span class="contact-val">btramue1@charlotte.edu</span>
+                        <span class="contact-arrow">&rarr;</span>
+                    </a>
+                    <a href="tel:7042584217" class="contact-row">
+                        <span class="contact-key">phone</span>
+                        <span class="contact-val">(704) 258-4217</span>
+                        <span class="contact-arrow">&rarr;</span>
+                    </a>
+                    <a href="https://github.com/btramuel" target="_blank" rel="noopener" class="contact-row">
+                        <span class="contact-key">github</span>
+                        <span class="contact-val">github.com/btramuel</span>
+                        <span class="contact-arrow">&rarr;</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" target="_blank" rel="noopener" class="contact-row">
+                        <span class="contact-key">linkedin</span>
+                        <span class="contact-val">/in/brian-grant-tramuel</span>
+                        <span class="contact-arrow">&rarr;</span>
+                    </a>
+                    <a href="https://app.joinhandshake.com/profiles/btramuel" target="_blank" rel="noopener" class="contact-row">
+                        <span class="contact-key">handshake</span>
+                        <span class="contact-val">btramuel</span>
+                        <span class="contact-arrow">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="foot-row">
+                <span>&copy; 2026 Brian Tramuel</span>
+                <span class="foot-mid">Built with vanilla HTML, CSS, &amp; JS &middot; deployed via GitHub Pages</span>
+                <span class="foot-loc">Charlotte, NC</span>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
