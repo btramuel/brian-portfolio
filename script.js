@@ -21,7 +21,7 @@ const PROJECTS = [
     cats:  ['ux', 'web'],
     cat:   'Capstone · UX',
     date:  'Apr 2026',
-    links: []
+    links: [{ text: 'Portfolio', url: 'https://webpages.charlotte.edu/btramue1/itis3135/case-study/index.html' }]
   },
   {
     title: 'Identity & Access Service',
@@ -103,15 +103,6 @@ const PROJECTS = [
     cat:   'Java · CLI',
     date:  '2023',
     links: [{ text: 'GitHub', url: 'https://github.com/btramuel/File-System-' }]
-  },
-  {
-    title: 'Library Management System',
-    desc:  'Java book manager using ArrayLists to add, remove, search, and sort library titles via an interactive terminal UI.',
-    tags:  ['Java', 'ArrayList', 'OOP', 'CLI'],
-    cats:  ['backend'],
-    cat:   'Java · CLI',
-    date:  '2023',
-    links: [{ text: 'GitHub', url: 'https://github.com/btramuel/Library-' }]
   },
   {
     title: 'Grade Tracker App',
