@@ -1,439 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Brian Tramuel — M.S. Information Technology student at UNC Charlotte pursuing IT support, cloud, infrastructure, and cybersecurity opportunities. Hands-on experience with Active Directory, Azure, and enterprise IT.">
-    <title>Brian Tramuel · IT &amp; Cybersecurity</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Brian Tramuel: M.S. Information Security & Privacy student at UNC Charlotte working toward cloud security. Hands-on with Active Directory, Entra ID, Azure, PowerShell, and Python security tooling.">
+  <title>Brian Tramuel | Identity, Cloud &amp; Security</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- set theme before paint so there's no flash -->
+  <script>
+    try {
+      const t = localStorage.getItem('theme');
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
-    <!-- MOBILE TOP BAR -->
-    <div class="mobile-bar">
-        <a href="#top" class="mobile-logo">
-            <span class="logo-mark">BT</span>
-            <span class="logo-slash">/</span>
-            <span class="logo-name">Brian Tramuel</span>
-        </a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span><span></span><span></span>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#top" class="wordmark">Brian Tramuel</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="topbar-actions">
+        <a href="documents/resume.pdf" target="_blank" rel="noopener" class="btn-small">Résumé</a>
+        <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch color theme">
+          <svg class="i-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="i-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
+      </div>
     </div>
+  </header>
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-inner">
-            <a href="#top" class="brand">
-                <div class="brand-mark">
-                    <span class="brand-bracket">[</span>bt<span class="brand-bracket">]</span>
-                </div>
-                <div class="brand-text">
-                    <span class="brand-name">Brian Tramuel</span>
-                    <span class="brand-role">IT · Security · Cloud · Infrastructure</span>
-                </div>
-            </a>
+  <main id="main">
 
-            <div class="status">
-                <span class="status-dot"></span>
-                <span class="status-text">Available for technical roles</span>
-            </div>
-
-            <nav class="side-nav">
-                <span class="nav-group">Overview</span>
-                <a href="#top" class="nav-link"><span class="nav-num">01</span>Introduction</a>
-                <a href="#about" class="nav-link"><span class="nav-num">02</span>About</a>
-                <a href="#experience" class="nav-link"><span class="nav-num">03</span>Experience</a>
-
-                <span class="nav-group">Work</span>
-                <a href="#projects" class="nav-link"><span class="nav-num">04</span>Projects</a>
-                <a href="#skills" class="nav-link"><span class="nav-num">05</span>Skills</a>
-                <a href="#certifications" class="nav-link"><span class="nav-num">06</span>Certifications</a>
-
-                <span class="nav-group">More</span>
-                <a href="#leadership" class="nav-link"><span class="nav-num">07</span>Leadership</a>
-                <a href="#contact" class="nav-link"><span class="nav-num">08</span>Contact</a>
-            </nav>
-
-            <div class="side-foot">
-                <a href="documents/resume.pdf" target="_blank" class="resume-link">
-                    <span>Résumé</span>
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7V16"/></svg>
-                </a>
-                <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
-                    <svg class="i-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-                    <svg class="i-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                </button>
-            </div>
+    <!-- HERO -->
+    <section id="top" class="hero wrap">
+      <div class="hero-text">
+        <h1 class="hero-name">Brian<br>Tramuel</h1>
+        <p class="hero-lede">
+          I work on the part of security that decides who gets in and what they can touch.
+          Grad student in Information Security &amp; Privacy at UNC Charlotte, building toward
+          cloud security engineering through identity, access, and SOC work.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn">See my projects</a>
+          <a href="#contact" class="btn btn-ghost">Contact me</a>
         </div>
-    </aside>
+      </div>
 
-    <!-- MAIN -->
-    <main class="main">
+      <!-- the hero "AD object" card. real info, formatted like an attribute editor -->
+      <figure class="record" aria-label="Quick facts about Brian">
+        <figcaption class="record-head">
+          <span class="record-dot" aria-hidden="true"></span>
+          Properties: Brian Tramuel
+        </figcaption>
+        <dl class="record-list">
+          <div class="rec"><dt>distinguishedName</dt><dd>CN=Brian Tramuel,OU=Charlotte,DC=btramuel,DC=github,DC=io</dd></div>
+          <div class="rec"><dt>title</dt><dd>M.S. IT student, Information Security &amp; Privacy</dd></div>
+          <div class="rec"><dt>department</dt><dd>IAM, SOC, cloud security</dd></div>
+          <div class="rec"><dt>memberOf</dt><dd>UNC Charlotte, Class of 2028</dd></div>
+          <div class="rec"><dt>l</dt><dd>Charlotte, NC</dd></div>
+          <div class="rec rec-status"><dt>userAccountControl</dt><dd>512 &nbsp;Enabled, open to work</dd></div>
+        </dl>
+      </figure>
+    </section>
 
-        <!-- HERO -->
-        <section id="top" class="hero">
-            <div class="hero-meta">
-                <span class="meta-tag">· last updated <span id="lastUpdated">May 2026</span></span>
+    <!-- ABOUT -->
+    <section id="about" class="section wrap">
+      <h2 class="section-title">About</h2>
+      <div class="section-body about">
+        <img class="about-photo" src="profile.jpg" alt="Brian Tramuel smiling in front of a Mecklenburg County backdrop" width="708" height="429">
+        <div class="prose">
+          <p>I'm a Computer Science grad from UNC Charlotte (IT concentration, Statistics minor), now in the first year of my M.S. in Information Technology with a concentration in Information Security &amp; Privacy.</p>
+          <p>My first real enterprise exposure was interning with Mecklenburg County, managing accounts and permissions in Active Directory and Entra ID, building VMs in Azure and vSphere, and helping migrate servers to the cloud. That's where identity clicked for me: almost every security problem eventually comes back to an account that has more access than it should.</p>
+          <p>Since then I've been building the tools and labs to get good at it: an Active Directory lab I can break and fix, a PowerShell access-review audit, and a phishing analyzer for the SOC side. Right now I'm studying for Security+ and looking for IAM, SOC, and IT roles in Charlotte or remote.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section wrap">
+      <h2 class="section-title">Experience</h2>
+      <ol class="section-body timeline">
+
+        
+
+        <li class="job">
+          <div class="job-when">Jun 2024 – Aug 2024</div>
+          <div class="job-what">
+            <h3>IT Systems Engineer Intern</h3>
+            <p class="job-where">Mecklenburg County, Charlotte, NC</p>
+            <p>Administered user accounts, permissions, and role assignments in Active Directory and Microsoft Entra ID with least privilege in mind. Built and managed 10+ VMs in Azure and VMware vSphere, ran Rubrik backups replicating to Azure storage, and helped migrate physical servers to the cloud. Kept servers, backups, and print services at 99% uptime and cut ticket resolution time by 15%.</p>
+            <ul class="tags"><li>Active Directory</li><li>Entra ID</li><li>Azure</li><li>vSphere</li><li>Rubrik</li><li>Windows Server</li></ul>
+          </div>
+        </li>
+
+        <li class="job">
+          <div class="job-when">Jun 2022 – May 2025</div>
+          <div class="job-what">
+            <h3>Technician</h3>
+            <p class="job-where">Select Home Tech, Charlotte, NC</p>
+            <p>Installed and configured 80+ home and office networks, fixed hardware and connectivity issues, and wrote the maintenance docs clients relied on afterward.</p>
+          </div>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section wrap">
+      <h2 class="section-title">Projects</h2>
+      <div class="section-body">
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" class="filter is-on" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="filter" data-filter="security" aria-pressed="false">Security &amp; IAM</button>
+          <button type="button" class="filter" data-filter="infra" aria-pressed="false">Infrastructure</button>
+          <button type="button" class="filter" data-filter="cloud" aria-pressed="false">Cloud</button>
+          <button type="button" class="filter" data-filter="software" aria-pressed="false">Software</button>
+          <button type="button" class="filter" data-filter="data" aria-pressed="false">Data</button>
+          <button type="button" class="filter" data-filter="ux" aria-pressed="false">UX</button>
+        </div>
+        <div id="projectList" class="projects"></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section wrap">
+      <h2 class="section-title">Skills</h2>
+      <dl class="section-body skills">
+        <div class="skill-row">
+          <dt>Identity &amp; access</dt>
+          <dd>Active Directory, Microsoft Entra ID, RBAC, least privilege, access reviews, account lifecycle, group policy and OU design, JWT and bcrypt auth</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Security operations</dt>
+          <dd>Phishing triage, email authentication (SPF, DKIM, DMARC), URL and lookalike-domain analysis, security hardening, misconfiguration review</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Digital forensics</dt>
+          <dd>Autopsy, The Sleuth Kit, ExifTool, E01 imaging and hash verification, deleted file carving, Windows registry and browser artifact analysis, timeline reconstruction</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Cryptography</dt>
+          <dd>AES modes (CBC vs. ECB), HMAC, length-extension attacks, RSA signatures, Diffie-Hellman, salted password hashing (PBKDF2, scrypt, bcrypt), CyberChef</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Cloud &amp; infrastructure</dt>
+          <dd>Microsoft Azure (VMs, Blob Storage), cloud migration, VMware vSphere and Workstation, Windows Server, Linux, Docker, Rubrik backup</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Networking</dt>
+          <dd>DNS, LAN/WAN, VPN, network setup and troubleshooting</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Scripting &amp; code</dt>
+          <dd>PowerShell, Python, Bash, SQL, Java, JavaScript (Node.js, Express), Spring Boot, Rust (learning this semester)</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Data</dt>
+          <dd>PostgreSQL, MySQL, database design, SAS, regression analysis</dd>
+        </div>
+        <div class="skill-row">
+          <dt>Tools</dt>
+          <dd>Git and GitHub, Postman, Swagger, Microsoft 365, usability testing</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- EDUCATION + CERTS -->
+    <section id="education" class="section wrap">
+      <h2 class="section-title">Education</h2>
+      <div class="section-body">
+        <ol class="schools">
+          <li class="school">
+            <div class="school-when">Aug 2026 – May 2028</div>
+            <div>
+              <h3>M.S. Information Technology</h3>
+              <p class="school-where">UNC Charlotte, concentration in Information Security &amp; Privacy</p>
+              <p class="school-note">This semester: ITIS 6200, a graduate security course covering applied cryptography; ITIS 5250, digital forensics; and ITCS 5102, programming languages, where my team is building a networked game in Rust.</p>
             </div>
-
-            <h1 class="hero-title">
-                <span class="hero-line">Hey, I&rsquo;m <span class="accent">Brian</span>.</span>
-                <span class="hero-line">Aspiring IT &amp; Cybersecurity professional.</span>
-            </h1>
-
-            <p class="hero-sub">
-                I'm interested in cloud technologies, infrastructure, networking, identity management, and enterprise IT. Computer Science graduate at UNC Charlotte, where I'm pursuing my M.S. in Information Technology starting August 2026.
-            </p>
-
-            <div class="hero-actions">
-                <a href="#projects" class="btn-primary">
-                    <span>View projects</span>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-                <a href="#contact" class="btn-secondary">Get in touch</a>
+          </li>
+          <li class="school">
+            <div class="school-when">Aug 2024 – May 2026</div>
+            <div>
+              <h3>B.A. Computer Science</h3>
+              <p class="school-where">UNC Charlotte, IT concentration, Statistics minor</p>
             </div>
-
-            <!-- info cards -->
-            <div class="info-grid">
-                <div class="info-card">
-                    <span class="info-label"><span class="info-dot"></span> location</span>
-                    <span class="info-value">Charlotte, NC</span>
-                </div>
-                <div class="info-card">
-                    <span class="info-label"><span class="info-dot"></span> education</span>
-                    <span class="info-value">UNC Charlotte &middot; B.A. CS</span>
-                    <span class="info-sub">M.S. IT &middot; Aug 2026</span>
-                </div>
-                <div class="info-card">
-                    <span class="info-label"><span class="info-dot"></span> focus</span>
-                    <span class="info-value">IT Support &middot; Security &middot; IAM &middot; Cloud</span>
-                </div>
-                <div class="info-card">
-                    <span class="info-label"><span class="info-dot"></span> hands-on with</span>
-                    <span class="info-value">Active Directory · Azure · Windows Server · Networking</span>
-                </div>
+          </li>
+          <li class="school">
+            <div class="school-when">Aug 2022 – May 2024</div>
+            <div>
+              <h3>Information Technology coursework</h3>
+              <p class="school-where">Winston-Salem State University, Business minor</p>
             </div>
-        </section>
+          </li>
+        </ol>
 
-        <!-- ABOUT -->
-        <section id="about" class="section">
-            <div class="section-head">
-                <span class="anchor">#02</span>
-                <h2>About</h2>
-            </div>
+        <h3 class="sub-title">Certification plan</h3>
+        <p class="sub-lede">In the order I'm taking them.</p>
+        <ol class="certs">
+          <li class="cert is-active">
+            <span class="cert-name">CompTIA Security+ (SY0-701)</span>
+            <span class="cert-state">Studying now</span>
+          </li>
+          <li class="cert">
+            <span class="cert-name">Microsoft SC-200 or CompTIA CySA+</span>
+            <span class="cert-state">Next</span>
+          </li>
+          <li class="cert">
+            <span class="cert-name">Microsoft AZ-500, Azure Security Engineer</span>
+            <span class="cert-state">Planned</span>
+          </li>
+          <li class="cert">
+            <span class="cert-name">ISC2 CCSP, then CISSP</span>
+            <span class="cert-state">Long term</span>
+          </li>
+        </ol>
+      </div>
+    </section>
 
-            <div class="about-grid">
-                <div class="about-photo">
-                    <div class="photo-frame">
-                        <img src="profile.jpg" alt="Brian Tramuel">
-                    </div>
-                </div>
-                <div class="about-prose">
-                    <p>I'm a Computer Science graduate from UNC Charlotte (IT concentration, Statistics minor), and this August I'm beginning my M.S. in Information Technology there with a concentration in Information Security &amp; Privacy. I'm building a career in IT and cybersecurity, with particular interests in identity and access management, cloud technologies, and enterprise infrastructure.</p>
-                    <p>I've already gotten my hands dirty: as an IT Systems Engineer intern with Mecklenburg County, I built and managed virtual machines in Azure and VMware, maintained server storage and backup systems, and supported county-wide IT operations. Since then, I've served as a teaching assistant for a Security+&ndash;aligned information security course and built enterprise-style labs at home &mdash; including an Active Directory environment I use to practice identity management, automation, and security hardening.</p>
-                    <p>I'm currently seeking IT support, security operations, IAM, and junior cloud or infrastructure roles in Charlotte or remote &mdash; anywhere I can bring that hands-on experience to a team and keep growing.</p>
+    <!-- LEADERSHIP -->
+    <section id="leadership" class="section wrap">
+      <h2 class="section-title">Involvement</h2>
+      <div class="section-body involve">
+        <div class="inv">
+          <h3>Association for Computing Machinery</h3>
+          <p class="inv-when">Aug 2022 – May 2026</p>
+          <p>5+ hackathons and software development workshops.</p>
+        </div>
+        <div class="inv">
+          <h3>Blacks in Technology</h3>
+          <p class="inv-when">Sep 2024 – May 2026</p>
+          <p>Career prep, networking, and events with industry professionals supporting Black tech students.</p>
+        </div>
+        <div class="inv">
+          <h3>Computing Leaders</h3>
+          <p class="inv-when">Aug 2025 – Dec 2025</p>
+          <p>Taught 5+ K–12 computing lessons, wrote lesson plans for teachers, and ran booth activities at the STEAM Expo.</p>
+        </div>
+      </div>
+    </section>
 
-                    <div class="education-list">
-                        <span class="edu-label">Education</span>
-                        <div class="edu-item">
-                            <div class="edu-main">
-                                <span class="edu-school">UNC Charlotte</span>
-                                <span class="edu-deg">M.S. Information Technology &middot; Information Security &amp; Privacy</span>
-                            </div>
-                            <span class="edu-date">Aug 2026 &mdash; Upcoming</span>
-                        </div>
-                        <div class="edu-item">
-                            <div class="edu-main">
-                                <span class="edu-school">UNC Charlotte</span>
-                                <span class="edu-deg">B.A. Computer Science &middot; IT Concentration &middot; Stats Minor</span>
-                            </div>
-                            <span class="edu-date">Aug 2024 &mdash; May 2026</span>
-                        </div>
-                        <div class="edu-item">
-                            <div class="edu-main">
-                                <span class="edu-school">Winston-Salem State</span>
-                                <span class="edu-deg">Information Technology &middot; Business Minor</span>
-                            </div>
-                            <span class="edu-date">Aug 2022 &mdash; May 2024</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- CONTACT -->
+    <section id="contact" class="section wrap contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="section-body">
+        <p class="contact-lede">Hiring for IAM, SOC, or IT roles in Charlotte or remote? I'd like to hear about it.</p>
+        <dl class="contact-list">
+          <div class="c-row"><dt>Email</dt><dd><a href="mailto:brian.dolphus@tramuel.com">brian.dolphus@tramuel.com</a></dd></div>
+          <div class="c-row"><dt>Phone</dt><dd><a href="tel:+17042584217">(704) 258-4217</a></dd></div>
+          <div class="c-row"><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" target="_blank" rel="noopener">in/brian-grant-tramuel</a></dd></div>
+          <div class="c-row"><dt>GitHub</dt><dd><a href="https://github.com/btramuel" target="_blank" rel="noopener">github.com/btramuel</a></dd></div>
+          <div class="c-row"><dt>Handshake</dt><dd><a href="https://app.joinhandshake.com/profiles/btramuel" target="_blank" rel="noopener">btramuel</a></dd></div>
+          <div class="c-row"><dt>Résumé</dt><dd><a href="documents/resume.pdf" target="_blank" rel="noopener">Download PDF</a></dd></div>
+        </dl>
+      </div>
+    </section>
 
-        <!-- EXPERIENCE -->
-        <section id="experience" class="section">
-            <div class="section-head">
-                <span class="anchor">#03</span>
-                <h2>Experience</h2>
-            </div>
+  </main>
 
-            <div class="exp-list">
+  <footer class="footer wrap">
+    <p>© 2026 Brian Tramuel. Hand-written HTML, CSS, and JS on GitHub Pages.</p>
+  </footer>
 
-                <article class="exp-item">
-                    <div class="exp-bullet"><span></span></div>
-                    <div class="exp-content">
-                        <div class="exp-top">
-                            <h3>IT Systems Engineer Intern <span class="exp-pill">Enterprise IT</span></h3>
-                            <span class="exp-date">Jun 2024 &mdash; Aug 2024</span>
-                        </div>
-                        <span class="exp-company">Mecklenburg County &middot; Charlotte, NC</span>
-                        <p>Built and managed 10+ virtual machines on Microsoft Azure and VMware supporting county-wide IT operations. Administered Active Directory accounts and maintained server storage, backup systems, and print services with 99% uptime &mdash; cut service ticket resolution time by 15% through performance tuning.</p>
-                        <div class="exp-tags">
-                            <span class="proj-tag">Azure</span>
-                            <span class="proj-tag">VMware</span>
-                            <span class="proj-tag">Active Directory</span>
-                            <span class="proj-tag">Windows Server</span>
-                            <span class="proj-tag">Backup &amp; Storage</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="exp-item">
-                    <div class="exp-bullet"><span></span></div>
-                    <div class="exp-content">
-                        <div class="exp-top">
-                            <h3>Technician</h3>
-                            <span class="exp-date">Jun 2022 &mdash; May 2025</span>
-                        </div>
-                        <span class="exp-company">Select Home Tech &middot; Charlotte, NC</span>
-                        <p>Installed and configured 80+ home and office networks. Resolved hardware and connectivity issues, performed system upgrades, and produced detailed maintenance documentation that improved client system reliability.</p>
-                        <div class="exp-tags">
-                            <span class="proj-tag">Networking</span>
-                            <span class="proj-tag">Hardware Support</span>
-                            <span class="proj-tag">Troubleshooting</span>
-                            <span class="proj-tag">Documentation</span>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- PROJECTS -->
-        <section id="projects" class="section">
-            <div class="section-head">
-                <span class="anchor">#04</span>
-                <h2>Projects</h2>
-            </div>
-            <p class="section-lede">Hands-on work across security, infrastructure, cloud, backend services, data, and UX research.</p>
-
-            <div class="filter-row" role="group" aria-label="Filter projects by category">
-                <button class="f-btn active" data-filter="all">All <span class="f-count"></span></button>
-                <button class="f-btn" data-filter="security">Security &amp; IAM</button>
-                <button class="f-btn" data-filter="infra">Infrastructure</button>
-                <button class="f-btn" data-filter="cloud">Cloud</button>
-                <button class="f-btn" data-filter="backend">Backend</button>
-                <button class="f-btn" data-filter="data">Data</button>
-                <button class="f-btn" data-filter="web">Web &amp; UX</button>
-            </div>
-
-            <div class="projects-list" id="projectsGrid"></div>
-        </section>
-
-        <!-- SKILLS / STACK -->
-        <section id="skills" class="section">
-            <div class="section-head">
-                <span class="anchor">#05</span>
-                <h2>Stack</h2>
-            </div>
-
-            <div class="stack-grid">
-                <div class="stack-block">
-                    <span class="stack-label">Programming</span>
-                    <div class="stack-items">
-                        <span class="stack-item">PowerShell</span>
-                        <span class="stack-item">Python</span>
-                        <span class="stack-item">Bash</span>
-                        <span class="stack-item">SQL</span>
-                        <span class="stack-item">Java</span>
-                        <span class="stack-item">JavaScript</span>
-                        <span class="stack-item subtle">HTML / CSS</span>
-                    </div>
-                </div>
-
-                <div class="stack-block">
-                    <span class="stack-label">Cloud Platforms</span>
-                    <div class="stack-items">
-                        <span class="stack-item">Microsoft Azure</span>
-                        <span class="stack-item">Azure Blob Storage</span>
-                        <span class="stack-item">AWS</span>
-                        <span class="stack-item">Cloud Migration</span>
-                        <span class="stack-item subtle">Render</span>
-                    </div>
-                </div>
-
-                <div class="stack-block">
-                    <span class="stack-label">IT &amp; Infrastructure</span>
-                    <div class="stack-items">
-                        <span class="stack-item">Windows Server</span>
-                        <span class="stack-item">Active Directory</span>
-                        <span class="stack-item">VMware</span>
-                        <span class="stack-item">Linux</span>
-                        <span class="stack-item">Docker</span>
-                        <span class="stack-item">Backup &amp; Storage</span>
-                        <span class="stack-item">Virtualization</span>
-                    </div>
-                </div>
-
-                <div class="stack-block">
-                    <span class="stack-label">Networking</span>
-                    <div class="stack-items">
-                        <span class="stack-item">DNS</span>
-                        <span class="stack-item">Network Configuration</span>
-                        <span class="stack-item">Connectivity Troubleshooting</span>
-                        <span class="stack-item">Hardware Setup</span>
-                    </div>
-                </div>
-
-                <div class="stack-block">
-                    <span class="stack-label">Cybersecurity</span>
-                    <div class="stack-items">
-                        <span class="stack-item">Identity &amp; Access Management</span>
-                        <span class="stack-item">RBAC</span>
-                        <span class="stack-item">Authentication (JWT, OAuth)</span>
-                        <span class="stack-item">Endpoint Security</span>
-                        <span class="stack-item">Threat Mitigation</span>
-                        <span class="stack-item">Access Control</span>
-                    </div>
-                </div>
-
-                <div class="stack-block">
-                    <span class="stack-label">Tools &amp; Technologies</span>
-                    <div class="stack-items">
-                        <span class="stack-item">Git</span>
-                        <span class="stack-item">PostgreSQL</span>
-                        <span class="stack-item">MySQL</span>
-                        <span class="stack-item">Node.js / Express</span>
-                        <span class="stack-item">Spring Boot</span>
-                        <span class="stack-item">Postman</span>
-                        <span class="stack-item">VS Code</span>
-                        <span class="stack-item">MS 365</span>
-                        <span class="stack-item subtle">SAS</span>
-                        <span class="stack-item subtle">Usability Testing</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CERTIFICATIONS -->
-        <section id="certifications" class="section">
-            <div class="section-head">
-                <span class="anchor">#06</span>
-                <h2>Certifications</h2>
-            </div>
-
-            <div class="cert-table">
-                <div class="cert-row cert-head">
-                    <span>Certification</span>
-                    <span>Provider</span>
-                    <span>Status</span>
-                </div>
-                <div class="cert-row">
-                    <span class="cert-name">CompTIA Security+</span>
-                    <span class="cert-prov">CompTIA</span>
-                    <span class="cert-status status-progress">In Progress</span>
-                </div>
-                <div class="cert-row">
-                    <span class="cert-name">Identity and Access Administrator Associate (SC-300)</span>
-                    <span class="cert-prov">Microsoft</span>
-                    <span class="cert-status status-planned">Planned</span>
-                </div>
-                <div class="cert-row">
-                    <span class="cert-name">Cybersecurity Architect Expert (SC-100)</span>
-                    <span class="cert-prov">Microsoft</span>
-                    <span class="cert-status status-planned">Planned</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- LEADERSHIP -->
-        <section id="leadership" class="section">
-            <div class="section-head">
-                <span class="anchor">#07</span>
-                <h2>Leadership</h2>
-            </div>
-
-            <div class="lead-grid">
-                <article class="lead-item">
-                    <h3>Association of Computing Machinery</h3>
-                    <span class="lead-date">Aug 2022 &mdash; May 2026</span>
-                    <p>Participated in 5+ hackathons and software development workshops. Collaborated on coding challenges and contributed at club meetings.</p>
-                </article>
-                <article class="lead-item">
-                    <h3>Blacks in Technology (BIT Club)</h3>
-                    <span class="lead-date">Sept 2024 &mdash; May 2026</span>
-                    <p>Engaged in events supporting Black tech students through career prep, networking sessions, and collaboration with industry professionals.</p>
-                </article>
-                <article class="lead-item">
-                    <h3>Computing Leaders</h3>
-                    <span class="lead-date">Aug 2025 &mdash; Dec 2025</span>
-                    <p>Delivered 5+ K&ndash;12 computing lessons, developed teacher lesson plans, and led STEAM Expo booth activities.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section section-contact">
-            <div class="section-head">
-                <span class="anchor">#08</span>
-                <h2>Contact</h2>
-            </div>
-
-            <div class="contact-block">
-                <h3 class="contact-title">Let's build something.</h3>
-                <p class="contact-sub">Open to IT support, security operations, IAM, and cloud &amp; infrastructure roles. Also happy to chat about anything technical &mdash; or anything else.</p>
-
-                <div class="contact-list">
-                    <a href="documents/resume.pdf" target="_blank" rel="noopener" class="contact-row">
-                        <span class="contact-key">r&eacute;sum&eacute;</span>
-                        <span class="contact-val">Download PDF</span>
-                        <span class="contact-arrow">&rarr;</span>
-                    </a>
-                    <a href="mailto:brian.dolphus@tramuel.com" class="contact-row">
-                        <span class="contact-key">email</span>
-                        <span class="contact-val">brian.dolphus@tramuel.com</span>
-                        <span class="contact-arrow">&rarr;</span>
-                    </a>
-                    <a href="tel:7042584217" class="contact-row">
-                        <span class="contact-key">phone</span>
-                        <span class="contact-val">(704) 258-4217</span>
-                        <span class="contact-arrow">&rarr;</span>
-                    </a>
-                    <a href="https://github.com/btramuel" target="_blank" rel="noopener" class="contact-row">
-                        <span class="contact-key">github</span>
-                        <span class="contact-val">github.com/btramuel</span>
-                        <span class="contact-arrow">&rarr;</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/brian-grant-tramuel-882121264/" target="_blank" rel="noopener" class="contact-row">
-                        <span class="contact-key">linkedin</span>
-                        <span class="contact-val">/in/brian-grant-tramuel</span>
-                        <span class="contact-arrow">&rarr;</span>
-                    </a>
-                    <a href="https://app.joinhandshake.com/profiles/btramuel" target="_blank" rel="noopener" class="contact-row">
-                        <span class="contact-key">handshake</span>
-                        <span class="contact-val">btramuel</span>
-                        <span class="contact-arrow">&rarr;</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer class="footer">
-            <div class="foot-row">
-                <span>&copy; 2026 Brian Tramuel</span>
-                <span class="foot-mid">Built with vanilla HTML, CSS, &amp; JS &middot; deployed via GitHub Pages</span>
-                <span class="foot-loc">Charlotte, NC</span>
-            </div>
-        </footer>
-
-    </main>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

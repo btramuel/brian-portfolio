@@ -1,373 +1,246 @@
 'use strict';
 
-/* ════════════════════════════════════════════════════════════════
-   PROJECTS — IT / security / cloud / infrastructure first,
-   then backend, data, and web/UX work.
-   cats: security | infra | cloud | backend | data | web
-   ════════════════════════════════════════════════════════════════ */
+// projects live here so adding one is just adding an object.
+// cats: security | infra | cloud | software | data | ux
+// status: 'In progress' shows a badge, leave it off when done
 const PROJECTS = [
   {
     title: 'Active Directory Detection Lab',
-    desc:  'Enterprise-style Active Directory lab built for hands-on security practice. A PowerShell provisioning script automates domain setup — users, groups, and OUs — with an optional flag that intentionally seeds common misconfigurations so I can practice finding and remediating them. Fully documented with a README and a Mermaid network topology diagram so anyone can reproduce the environment.',
-    learned: 'How real AD environments are attacked and hardened, how to automate repeatable infrastructure with PowerShell, and how to document a lab so it reads like an engineering deliverable.',
-    tags:  ['Active Directory', 'Windows Server', 'PowerShell', 'VMware', 'IAM', 'Security Hardening'],
-    cats:  ['security', 'infra'],
-    cat:   'Security · Infrastructure',
-    date:  'Jul 2026',
+    stack: 'Windows Server 2025, Active Directory, PowerShell, DNS, VMware Workstation',
+    date: '2025 – now',
+    status: 'In progress',
     featured: true,
-    // TODO: add the GitHub repo link once the repository is public:
-    // links: [{ text: 'GitHub', url: 'https://github.com/btramuel/<repo-name>' }]
-    links: []
+    cats: ['security', 'infra'],
+    desc: 'An enterprise-style AD environment I can break and fix on purpose: a Windows Server 2025 domain controller and a domain-joined Windows 11 client in VMware Workstation, with an OU structure, users, and security groups modeled on a small company. A PowerShell provisioning script builds the domain and has an optional flag that seeds common misconfigurations to hunt down. Documented with a README and a Mermaid topology diagram so anyone can rebuild it.',
+    learned: 'How AD actually fits together (DNS, OUs vs. groups, authentication flow) and how to write lab docs that read like an engineering deliverable.',
+    links: [] // add the repo once it's public
   },
   {
-    title: 'Active Directory Domain Lab',
-    desc:  'Configured a Windows Server 2025 Domain Controller and Windows 11 client in VMware Workstation. Set up DNS, user authentication policies, and organized accounts and groups to simulate enterprise-scale identity management.',
-    learned: 'The fundamentals of domain services — DNS, authentication flow, and how organizational units keep large user bases manageable.',
-    tags:  ['VMware', 'Windows Server 2025', 'AD DS', 'DNS', 'IAM'],
-    cats:  ['infra', 'security'],
-    cat:   'Infrastructure',
-    date:  'Sep 2025',
-    links: []
+    title: 'IAM Access-Hygiene Audit',
+    stack: 'PowerShell, Active Directory module (RSAT)',
+    date: 'Aug 2026',
+    featured: true,
+    cats: ['security', 'infra'],
+    desc: 'A read-only PowerShell tool that runs the access review an IAM team does on a schedule. It finds stale and never-logged-on accounts, disabled accounts still sitting in the directory, and privileged group membership resolved through nested groups, then flags the worst case: stale or disabled accounts that still hold admin rights. Outputs a CSV and a color-coded console summary, with a seed script to generate test data in a lab.',
+    learned: 'Why LastLogonDate lags real activity by up to two weeks, and why nested groups are where hidden admin rights live.',
+    links: [] // add the repo once it's public
   },
   {
-    title: 'Server Migration to Azure',
-    desc:  'Migrated physical servers to Azure cloud infrastructure with secure data transfer and proper retirement of legacy hardware. Fully documented the new infrastructure setup.',
-    tags:  ['Azure', 'VMware', 'Cloud Migration', 'Documentation'],
-    cats:  ['cloud', 'infra'],
-    cat:   'Cloud · Infrastructure',
-    date:  'Aug 2024',
-    links: []
+    title: 'Phishing & Smishing Analyzer',
+    stack: 'Python (standard library)',
+    date: 'Aug 2026',
+    featured: true,
+    cats: ['security', 'software'],
+    desc: 'A Python triage tool for suspicious email (.eml) and text messages. Checks for From / Reply-To / Return-Path mismatches, reads SPF, DKIM, and DMARC results, and analyzes every link. Both analyzers share one link-analysis module, which catches lookalike domains like paypa1.com with homoglyph normalization. Standard library only.',
+    learned: 'Testing the SMS version exposed a lookalike-domain check that only worked by accident in the email version. Fixing it in the shared module fixed both.',
+    links: [] // add the repo once it's public
+  },
+  {
+    title: 'Digital Forensic Examinations',
+    stack: 'Autopsy, The Sleuth Kit, ExifTool, ewfverify, Windows registry',
+    date: 'Fall 2026',
+    featured: true,
+    cats: ['security'],
+    desc: 'Two court-style forensic reports from my graduate forensics course, each answering an investigator\'s questions from E01 disk images. On a seized thumb drive, I carved three deleted photos and used their EXIF and GPS data to tie them to an iPhone 6s and a specific campus building. On a Windows 7 laptop, I rebuilt a suspect\'s timeline from email, IE WebCache history, registry hives, and downloads, including searches for anti-forensics tools and a CCleaner download. Every image was hash-verified and every finding cross-checked with a second toolset.',
+    learned: 'Pinning down time zones before trusting any timestamp, and writing findings so a non-technical reader (or a court) can follow them.',
+    links: [
+      { text: 'Laptop exam (PDF)', url: 'documents/forensics-monarch-laptop-exam.pdf' },
+      { text: 'Thumb drive exam (PDF)', url: 'documents/forensics-thumb-drive-exam.pdf' }
+    ]
   },
   {
     title: 'Identity & Access Service',
-    desc:  'A REST API for user identity and access management with 7+ endpoints handling registration, login, and role-based permissions. Hashed passwords with bcrypt and issued JWT tokens on login — users stay signed in without sending credentials on every request. Added Zod input validation and rate limiting on login to block brute-force attempts.',
-    learned: 'How authentication and authorization actually work under the hood — token lifecycles, password storage, and defending a login endpoint.',
-    tags:  ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'JWT', 'Zod', 'bcrypt'],
-    cats:  ['security', 'backend'],
-    cat:   'Security · Backend',
-    date:  'Jan 2026',
+    stack: 'Node.js, Express, PostgreSQL, Prisma, JWT, bcrypt, Zod',
+    date: 'Jan 2026',
+    cats: ['security', 'software'],
+    desc: 'A REST API for identity and access management with registration, login, and role-based permissions. Passwords hashed with bcrypt, JWTs issued on login, Zod input validation, and rate limiting on the login route to slow down brute-force attempts.',
     links: [{ text: 'GitHub', url: 'https://github.com/btramuel/identity-access-service' }]
   },
   {
+    title: 'Panthers Library Management System',
+    stack: 'Node.js, Express 5, PostgreSQL, JWT, bcrypt',
+    date: 'Spring 2026',
+    cats: ['software', 'security'],
+    desc: 'Full-stack library system built with a team of five, where I wrote most of the backend. Users register, browse the catalog, and borrow or return books. JWT auth with an admin-only middleware layer, bcrypt hashing with an enforced password policy, and deactivated accounts blocked at login. Borrowing and returning run inside database transactions with rollback, so a failed checkout never leaves inventory counts out of sync. Also enforces a 3-book limit and supports pagination, genre filters, and sorting.',
+    links: [{ text: 'GitHub', url: 'https://github.com/ssuther6-ops/ITIS3300-Panthers' }]
+  },
+  {
+    title: 'Applied Cryptography Labs',
+    stack: 'Python, CyberChef, AES, HMAC, RSA, Diffie-Hellman',
+    date: 'Fall 2026',
+    cats: ['security', 'software'],
+    desc: 'Hands-on labs from my graduate security course. I wrote a length-extension attack that forges a valid token against SHA256(secret || message), then showed the same forgery fails against HMAC. I also built a stateful man-in-the-middle interceptor where Mallory decrypts and rewrites a message in transit, and worked through which encrypt-and-MAC schemes actually give confidentiality and integrity, plus RSA, Diffie-Hellman, and salted password KDFs.',
+    links: [
+      { text: 'Length-extension attack', url: 'https://github.com/btramuel/LabHM_LengthExtension' },
+      { text: 'MITM interceptor', url: 'https://github.com/btramuel/Lab04Final_Interceptor' }
+    ]
+  },
+  {
+    title: 'Proton VPN Usability Study',
+    stack: 'Moderated think-aloud testing, SEQ, SUS',
+    date: '2026',
+    cats: ['ux', 'security'],
+    desc: 'Four-person usability study of Proton VPN with 12 participants ranging from first-time to experienced VPN users. Across six tasks, the kill switch was the clear problem: lowest SEQ score, most errors, and slowest time, and several people who turned it on still could not say what it did. Our main takeaway was the gap between feeling secure (green banner, lock icon) and actually being protected.',
+    links: [{ text: 'Report (PDF)', url: 'documents/proton-vpn-usability-study.pdf' }]
+  },
+  {
+    title: 'Proton Pass Heuristic Evaluation',
+    stack: "Nielsen's heuristics, severity rating",
+    date: '2026',
+    cats: ['ux', 'security'],
+    desc: "Five-person evaluation of a password manager across its desktop app, web app, and browser extension on Mac and Windows. We found about ten issues and rated each on Nielsen's 0–4 scale. The worst were security problems wearing a UX costume: credentials deleted with no confirmation, vault moves with no undo in shared vaults, and a toolbar icon that looks the same whether the vault is locked or not.",
+    links: [{ text: 'Report (PDF)', url: 'documents/proton-pass-heuristic-evaluation.pdf' }]
+  },
+  {
+    title: 'Rust Battleship',
+    stack: 'Rust, networking',
+    date: 'Fall 2026',
+    status: 'In progress',
+    cats: ['software'],
+    desc: 'Online two-player Battleship built in Rust with a team of four for ITCS 5102. We picked Rust for its memory safety and its growing use in security tooling. Final presentation is November 16.',
+    links: [{ text: 'GitHub', url: 'https://github.com/btramuel/Rust-BattleShip' }]
+  },
+  {
+    title: 'Server Migration to Azure',
+    stack: 'Azure, VMware',
+    date: 'Aug 2024',
+    cats: ['cloud', 'infra'],
+    desc: 'Part of my Mecklenburg County internship: moved physical servers to Azure with secure data transfer, retired the old hardware properly, and documented the new setup.',
+    links: []
+  },
+  {
     title: 'Cloud File Storage Service',
-    desc:  'Spring Boot REST API backed by Azure Blob Storage and PostgreSQL, supporting 4+ file operations with cloud-based storage. Implemented endpoints using Spring Data JPA and Maven; validated 10+ API calls with Postman and curl.',
-    tags:  ['Spring Boot', 'Azure Blob', 'PostgreSQL', 'JPA', 'Maven', 'Postman'],
-    cats:  ['cloud', 'backend'],
-    cat:   'Cloud · Backend',
-    date:  'Dec 2025',
+    stack: 'Spring Boot, Azure Blob Storage, PostgreSQL, Maven',
+    date: 'Dec 2025',
+    cats: ['cloud', 'software'],
+    desc: 'Spring Boot REST API backed by Azure Blob Storage and PostgreSQL for uploading, listing, downloading, and deleting files. Built with Spring Data JPA and Maven, tested with Postman and curl.',
     links: [{ text: 'GitHub', url: 'https://github.com/btramuel/cloud-file-storage' }]
   },
   {
     title: 'Book Club API',
-    desc:  'A RESTful API with 10+ endpoints supporting users, books, and clubs with role-based access control. Secured with JWT authentication and bcrypt — protecting 100% of user account operations. Documented and tested with Swagger and Postman, deployed on Render.',
-    tags:  ['Node.js', 'Express', 'PostgreSQL', 'Prisma', 'JWT', 'bcrypt', 'Swagger', 'Render'],
-    cats:  ['backend', 'cloud'],
-    cat:   'Backend',
-    date:  'May 2026',
+    stack: 'Node.js, Express, PostgreSQL, Prisma, Docker, Swagger, Render',
+    date: 'May 2026',
+    cats: ['software', 'cloud'],
+    desc: 'REST API with 10+ endpoints for users, books, and clubs, with role-based access control and JWT + bcrypt auth. Containerized with Docker, documented with Swagger, deployed on Render.',
     links: [{ text: 'GitHub', url: 'https://github.com/btramuel/book-club-api' }]
   },
   {
-    title: 'Cloud Portfolio Website',
-    desc:  'Personal portfolio hosted on Azure Blob Storage with static site hosting, custom domain, and CDN-enabled asset delivery.',
-    tags:  ['HTML', 'CSS', 'Azure Blob', 'Static Hosting'],
-    cats:  ['web', 'cloud'],
-    cat:   'Web · Cloud',
-    date:  '2025',
-    links: [{ text: 'GitHub', url: 'https://github.com/btramuel/brian-portfolio' }]
+    title: 'UC Berkeley EECS Redesign',
+    stack: 'UX research, HTML, CSS, JavaScript',
+    date: 'Apr 2026',
+    cats: ['ux'],
+    desc: 'Capstone: my team audited the EECS site against Nielsen\'s heuristics and rebuilt it. I led UX research and frontend. Two rounds of usability testing shaped the final responsive build with dark mode, search, and a validated RSVP form.',
+    links: [{ text: 'Case study', url: 'https://webpages.charlotte.edu/btramue1/itis3135/case-study/index.html' }]
+  },
+  {
+    title: 'Planner App UX Research',
+    stack: 'Think-aloud testing, SEQ, SUS, focus groups, co-design',
+    date: 'Fall 2025',
+    cats: ['ux', 'data'],
+    desc: 'Semester-long research project with a team of five on why planner apps fail people who struggle with big tasks. We ran moderated think-aloud usability tests on Todoist with SEQ and SUS scoring, then focus groups, personas, and journey maps, then co-design sessions where participants sketched their ideal planner. I ran my own participant sessions, built a persona and journey map, and covered competitor usability problems and market opportunities for the final poster.',
+    links: [{ text: 'Final report (PDF)', url: 'documents/planner-app-ux-research.pdf' }]
   },
   {
     title: 'Car Valet Management System',
-    desc:  'Relational database for managing valet staff, vehicles, and transactions. Includes stored procedures, indexed queries, and real-time transaction tracking.',
-    tags:  ['SQL', 'MySQL', 'Database Design', 'ERD'],
-    cats:  ['data'],
-    cat:   'Database',
-    date:  '2024',
-    links: [{ text: 'View Docs', url: 'documents/valet-systems.pdf' }]
+    stack: 'MySQL, SQL, ERD',
+    date: '2024',
+    cats: ['data'],
+    desc: 'Relational database for valet staff, vehicles, and transactions, with stored procedures and indexed queries.',
+    links: [{ text: 'Documentation (PDF)', url: 'documents/valet-systems.pdf' }]
   },
   {
     title: 'Student Stress Analysis',
-    desc:  'Survey data analyzed using SAS and regression models to identify stress patterns among STEM students. Used Google Forms for collection and statistical modeling for inference.',
-    tags:  ['SAS', 'Statistics', 'Regression'],
-    cats:  ['data'],
-    cat:   'Data Analysis',
-    date:  '2024',
-    links: [{ text: 'View Report', url: 'documents/student-stress-analysis.pdf' }]
+    stack: 'SAS, regression',
+    date: '2024',
+    cats: ['data'],
+    desc: 'Survey of STEM students analyzed in SAS with regression models to find what drives stress.',
+    links: [{ text: 'Report (PDF)', url: 'documents/student-stress-analysis.pdf' }]
   },
   {
     title: 'File System Simulator',
-    desc:  'Java CLI application simulating file and folder management with a custom command interpreter. Supports directory creation, navigation, file operations, and full tree visualization.',
-    tags:  ['Java', 'CLI', 'Data Structures', 'OOP'],
-    cats:  ['backend'],
-    cat:   'Java · CLI',
-    date:  '2023',
+    stack: 'Java',
+    date: '2023',
+    cats: ['software'],
+    desc: 'Java command-line app with its own command interpreter for creating, navigating, and managing files and folders, plus tree view.',
     links: [{ text: 'GitHub', url: 'https://github.com/btramuel/File-System-' }]
   },
   {
-    title: 'UC Berkeley EECS Redesign',
-    desc:  'Capstone project: my team and I picked apart UC Berkeley\'s EECS website — buried events, confusing acronyms, no feedback on click — mapped issues against Nielsen\'s heuristics, and rebuilt it. I led UX research and frontend. Two rounds of testing (4 on wireframes, 3 on hi-fi prototype) reshaped what we shipped: fully responsive, light/dark mode, client-side search, and a working RSVP form with inline validation.',
-    tags:  ['UX Research', 'Nielsen Heuristics', 'Wireframing', 'HTML', 'CSS', 'JavaScript', 'Responsive'],
-    cats:  ['web'],
-    cat:   'Capstone · UX',
-    date:  'Apr 2026',
-    links: [{ text: 'Portfolio', url: 'https://webpages.charlotte.edu/btramue1/itis3135/case-study/index.html' }]
-  },
-  {
-    title: 'Charlotte Web Pages Site',
-    desc:  'Course site deployed on UNC Charlotte webspace with reusable components, form validation, and accessible design following WCAG guidelines.',
-    tags:  ['HTML', 'CSS', 'JavaScript', 'WCAG'],
-    cats:  ['web'],
-    cat:   'Frontend',
-    date:  '2024',
-    links: [{ text: 'View Site', url: 'https://webpages.charlotte.edu/btramue1/itis3135/' }]
-  },
-  {
     title: 'Grade Tracker App',
-    desc:  'Designed a grade visualization tool through a full UX cycle. Usability tests informed navigation refinements that measurably reduced user confusion and task time.',
-    tags:  ['UX Design', 'Prototyping', 'Usability Testing'],
-    cats:  ['web'],
-    cat:   'UX',
-    date:  '2024',
-    links: [{ text: 'View Docs', url: 'documents/grade-tracker-project.pdf' }]
+    stack: 'Prototyping, usability testing',
+    date: '2024',
+    cats: ['ux'],
+    desc: 'Grade visualization tool designed through a full UX cycle. Usability tests drove navigation changes that cut task time.',
+    links: [{ text: 'Documentation (PDF)', url: 'documents/grade-tracker-project.pdf' }]
   },
   {
     title: 'DoorDash Usability Evaluation',
-    desc:  'Led SEQ/SUS testing on DoorDash ordering and navigation flows. Identified friction in customization and promo code discoverability and produced actionable design recommendations.',
-    tags:  ['UX Research', 'SEQ/SUS', 'Heuristic Eval'],
-    cats:  ['web'],
-    cat:   'UX Research',
-    date:  '2024',
-    links: [{ text: 'View Report', url: 'documents/doordash-usability-report.pdf' }]
+    stack: 'SEQ, SUS, heuristic evaluation',
+    date: '2024',
+    cats: ['ux'],
+    desc: 'Ran SEQ and SUS testing on DoorDash ordering flows and found friction in item customization and promo codes.',
+    links: [{ text: 'Report (PDF)', url: 'documents/doordash-usability-report.pdf' }]
   }
 ];
 
-/* ── RENDER PROJECTS ──────────────────────────────────────── */
-function renderProjects(filter) {
-  const grid = document.getElementById('projectsGrid');
-  if (!grid) return;
+const list = document.getElementById('projectList');
 
-  const list = filter === 'all'
-    ? PROJECTS
-    : PROJECTS.filter(p => p.cats.includes(filter));
+function projectHTML(p, showFeatured) {
+  const badge = p.status ? `<span class="badge">${p.status}</span>` : '';
+  const learned = p.learned
+    ? `<p class="proj-learned"><strong>What I learned:</strong> ${p.learned}</p>`
+    : '';
+  const links = p.links.length
+    ? `<div class="proj-links">${p.links.map(l =>
+        `<a href="${l.url}" target="_blank" rel="noopener">${l.text}</a>`).join('')}</div>`
+    : '';
+  const cls = showFeatured && p.featured ? 'proj is-featured' : 'proj';
 
-  if (list.length === 0) {
-    grid.innerHTML = '<p style="color:var(--text-3); padding:2rem 0; font-size:0.9rem;">No projects in this category.</p>';
-    return;
-  }
-
-  grid.innerHTML = list.map((p, i) => {
-    const num = String(i + 1).padStart(2, '0');
-    const tagsHTML = p.tags.map(t => `<span class="proj-tag">${t}</span>`).join('');
-    const linksHTML = p.links.length
-      ? `<div class="proj-links">${p.links.map(l =>
-          `<a href="${l.url}" target="_blank" rel="noopener" class="proj-link">${l.text}</a>`
-        ).join('')}</div>`
-      : '';
-    const learnedHTML = p.learned
-      ? `<p class="proj-learned"><span class="learned-label">What I learned</span>${p.learned}</p>`
-      : '';
-    const featured = (filter === 'all' && p.featured) ? 'featured' : '';
-    const featuredBadge = featured
-      ? `<span class="featured-badge">★ Featured</span>`
-      : '';
-    // Whole card is clickable when it has a primary link
-    const clickable = p.links.length
-      ? `clickable" data-href="${p.links[0].url}" tabindex="0" role="link" aria-label="${p.title} — opens ${p.links[0].text}`
-      : '';
-
-    return `
-      <article class="proj-card ${featured} ${clickable}">
-        <div class="proj-top">
-          <div class="proj-meta-left">
-            <span class="proj-num">${num}</span>
-            <span class="proj-cat">${p.cat}</span>
-            ${featuredBadge}
-          </div>
-          <span class="proj-date">${p.date || ''}</span>
-        </div>
-        <h3 class="proj-title">${p.title}</h3>
-        <p class="proj-desc">${p.desc}</p>
-        ${learnedHTML}
-        <div class="proj-tags">${tagsHTML}</div>
-        ${linksHTML}
-      </article>`;
-  }).join('');
-
-  // Update count display
-  const allBtn = document.querySelector('.f-btn[data-filter="all"]');
-  if (allBtn) {
-    const countEl = allBtn.querySelector('.f-count');
-    if (countEl) countEl.textContent = PROJECTS.length;
-  }
-
-  reobserveReveal();
+  return `
+    <article class="${cls}">
+      <div class="proj-top">
+        <h3 class="proj-title">${p.title}${badge}</h3>
+        <span class="proj-date">${p.date}</span>
+      </div>
+      <p class="proj-desc">${p.desc}</p>
+      ${p.stack ? `<p class="proj-stack">Built with ${p.stack}</p>` : ''}
+      ${learned}
+      ${links}
+    </article>`;
 }
 
-/* ── CLICKABLE PROJECT CARDS (event delegation) ───────────── */
-const projectsGrid = document.getElementById('projectsGrid');
-
-function openCard(card) {
-  const href = card.dataset.href;
-  if (!href) return;
-  // Internal document links open in same tab conventions as their anchor
-  window.open(href, '_blank', 'noopener');
+function render(filter) {
+  const items = filter === 'all' ? PROJECTS : PROJECTS.filter(p => p.cats.includes(filter));
+  // only call out featured ones on the "All" view, otherwise it's noisy
+  list.innerHTML = items.length
+    ? items.map(p => projectHTML(p, filter === 'all')).join('')
+    : '<p class="empty">Nothing in this category yet.</p>';
 }
 
-projectsGrid && projectsGrid.addEventListener('click', e => {
-  const card = e.target.closest('.proj-card.clickable');
-  if (!card) return;
-  // Let real links inside the card behave normally
-  if (e.target.closest('a')) return;
-  openCard(card);
-});
-
-projectsGrid && projectsGrid.addEventListener('keydown', e => {
-  if (e.key !== 'Enter') return;
-  const card = e.target.closest('.proj-card.clickable');
-  if (card && e.target === card) openCard(card);
-});
-
-/* ── FILTER BUTTONS ───────────────────────────────────────── */
-document.querySelectorAll('.f-btn').forEach(btn => {
+document.querySelectorAll('.filter').forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.f-btn').forEach(b => {
-      b.classList.remove('active');
-      b.removeAttribute('aria-pressed');
+    document.querySelectorAll('.filter').forEach(b => {
+      b.classList.remove('is-on');
+      b.setAttribute('aria-pressed', 'false');
     });
-    btn.classList.add('active');
+    btn.classList.add('is-on');
     btn.setAttribute('aria-pressed', 'true');
-    renderProjects(btn.dataset.filter);
+    render(btn.dataset.filter);
   });
 });
 
-/* ── THEME ────────────────────────────────────────────────── */
+// theme toggle. no saved choice = follow the OS
 const themeBtn = document.getElementById('themeBtn');
-const savedTheme = localStorage.getItem('theme');
 
-if (savedTheme === 'dark') document.body.classList.add('dark');
+function currentTheme() {
+  const set = document.documentElement.dataset.theme;
+  if (set) return set;
+  return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
 
-themeBtn && themeBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  const mode = document.body.classList.contains('dark') ? 'dark' : 'light';
-  localStorage.setItem('theme', mode);
+themeBtn.addEventListener('click', () => {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem('theme', next); } catch (e) {}
 });
 
-/* ── MOBILE SIDEBAR ───────────────────────────────────────── */
-const hamburger = document.getElementById('hamburger');
-const sidebar = document.getElementById('sidebar');
-
-// create backdrop element
-const backdrop = document.createElement('div');
-backdrop.className = 'sidebar-backdrop';
-document.body.appendChild(backdrop);
-
-function closeSidebar() {
-  sidebar && sidebar.classList.remove('open');
-  hamburger && hamburger.classList.remove('open');
-  backdrop.classList.remove('show');
-  document.body.style.overflow = '';
-}
-
-function openSidebar() {
-  sidebar && sidebar.classList.add('open');
-  hamburger && hamburger.classList.add('open');
-  backdrop.classList.add('show');
-  document.body.style.overflow = 'hidden';
-}
-
-hamburger && hamburger.addEventListener('click', () => {
-  if (sidebar.classList.contains('open')) {
-    closeSidebar();
-  } else {
-    openSidebar();
-  }
-});
-
-backdrop.addEventListener('click', closeSidebar);
-
-// Close on link click (mobile)
-document.querySelectorAll('.nav-link, .resume-link').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 1024) closeSidebar();
-  });
-});
-
-/* ── SMOOTH SCROLL ────────────────────────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const href = a.getAttribute('href');
-    if (href === '#') return;
-    const el = document.querySelector(href);
-    if (el) {
-      e.preventDefault();
-      const top = el.getBoundingClientRect().top + window.pageYOffset - 32;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
-  });
-});
-
-/* ── ACTIVE NAV LINK on scroll ───────────────────────────── */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-function updateActiveNav() {
-  const scrollY = window.pageYOffset + 100;
-  let currentId = '';
-
-  sections.forEach(section => {
-    const top = section.offsetTop;
-    if (scrollY >= top) {
-      currentId = section.getAttribute('id');
-    }
-  });
-
-  navLinks.forEach(link => {
-    const isActive = link.getAttribute('href') === '#' + currentId;
-    link.classList.toggle('active', isActive);
-    if (isActive) {
-      link.setAttribute('aria-current', 'true');
-    } else {
-      link.removeAttribute('aria-current');
-    }
-  });
-}
-
-window.addEventListener('scroll', updateActiveNav, { passive: true });
-
-/* ── SCROLL REVEAL ────────────────────────────────────────── */
-const revealObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in');
-      revealObs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
-
-function reobserveReveal() {
-  document.querySelectorAll('.proj-card').forEach(el => {
-    el.classList.add('reveal');
-    revealObs.observe(el);
-  });
-}
-
-function attachReveal() {
-  document.querySelectorAll(
-    '.exp-item, .stack-block, .lead-item, .info-card, .cert-row:not(.cert-head), .edu-item, .contact-row'
-  ).forEach(el => {
-    el.classList.add('reveal');
-    revealObs.observe(el);
-  });
-}
-
-/* ── LAST UPDATED DATE ────────────────────────────────────── */
-const lastUpdated = document.getElementById('lastUpdated');
-if (lastUpdated) {
-  const d = new Date();
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  lastUpdated.textContent = `${months[d.getMonth()]} ${d.getFullYear()}`;
-}
-
-/* ── INIT ─────────────────────────────────────────────────── */
-renderProjects('all');
-attachReveal();
-updateActiveNav();
+render('all');
