@@ -33,7 +33,7 @@ const PROJECTS = [
     cats: ['security', 'software'],
     desc: 'A Python triage tool for suspicious email (.eml) and text messages. Checks for From / Reply-To / Return-Path mismatches, reads SPF, DKIM, and DMARC results, and analyzes every link. Both analyzers share one link-analysis module, which catches lookalike domains like paypa1.com with homoglyph normalization. Standard library only.',
     learned: 'Testing the SMS version exposed a lookalike-domain check that only worked by accident in the email version. Fixing it in the shared module fixed both.',
-    links: [] // add the repo once it's public
+    links: [{ text: 'GitHub', url: 'https://github.com/btramuel/phishing-analyzer' }]
   },
   {
     title: 'Digital Forensic Examinations',
